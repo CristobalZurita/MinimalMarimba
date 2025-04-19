@@ -657,38 +657,45 @@ html {
 /* Eliminar antiguo sistema de pestañas si existe */
 .bio-nav {
     display: none; /* Ocultar la antigua navegación si existe */
-}
-/* — Menú siempre visible en fila para pantallas ≤ 800px — */
+}/* — Menú horizontal responsive para pantallas ≤ 800px — */
 @media screen and (max-width: 800px) {
-    /* Asegura que el <nav id="nav"> esté siempre visible */
+    /* 1) Forzar que tu <nav id="nav"> esté siempre visible */
     #nav {
       display: block !important;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.95);
+      z-index: 1000;
     }
   
-    /* Convierte la lista en fila */
+    /* 2) Convierto la UL en flex‑fila */
     #nav ul {
       display: flex !important;
-      flex-direction: row !important;           /* fila en lugar de columna */
-      justify-content: space-around !important; /* reparte los links */
+      flex-wrap: wrap !important;               /* permite salto si faltan espacios */
+      justify-content: center !important;       /* centrar items */
       align-items: center !important;
-      padding: 0.5rem 0 !important;
       margin: 0 !important;
+      padding: 0 !important;
       list-style: none !important;
-      overflow-x: auto !important;              /* opcional: scroll horizontal si falta espacio */
     }
   
-    /* Cada ítem con ancho automático */
+    /* 3) Cada LI con ancho automático y margen */
     #nav li {
+      flex: 1 1 auto !important;
+      margin: 0.2rem !important;
       width: auto !important;
-    }
-    #nav a {
-      display: inline-block !important;
-      width: auto !important;
-      padding: 0.8rem 1rem !important;
-      text-align: center !important;
     }
   
-    /* Oculta submenús anidados */
+    /* 4) Cada enlace block‑tap y padding cómodo */
+    #nav a {
+      display: block !important;
+      padding: 0.6rem 1rem !important;
+      text-align: center !important;
+      white-space: nowrap !important;           /* evita que el texto se enrolle */
+    }
+  
+    /* 5) Ocultar cualquier sub‑lista si no la necesitas */
     #nav ul ul {
       display: none !important;
     }
