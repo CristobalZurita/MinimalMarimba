@@ -658,36 +658,37 @@ html {
 .bio-nav {
     display: none; /* Ocultar la antigua navegación si existe */
 }
-
-/* — Menú siempre visible en columna para pantallas <= 800px — */
+/* — Menú siempre visible en fila para pantallas ≤ 800px — */
 @media screen and (max-width: 800px) {
     /* Asegura que el <nav id="nav"> esté siempre visible */
     #nav {
       display: block !important;
     }
   
-    /* Convierte la lista en columna */
+    /* Convierte la lista en fila */
     #nav ul {
       display: flex !important;
-      flex-direction: column !important;
+      flex-direction: row !important;           /* fila en lugar de columna */
+      justify-content: space-around !important; /* reparte los links */
       align-items: center !important;
       padding: 0.5rem 0 !important;
       margin: 0 !important;
       list-style: none !important;
+      overflow-x: auto !important;              /* opcional: scroll horizontal si falta espacio */
     }
   
-    /* Cada ítem ocupa toda la línea */
+    /* Cada ítem con ancho automático */
     #nav li {
-      width: 100% !important;
+      width: auto !important;
     }
     #nav a {
-      display: block !important;
-      width: 100% !important;
+      display: inline-block !important;
+      width: auto !important;
       padding: 0.8rem 1rem !important;
       text-align: center !important;
     }
   
-    /* Opcional: si no quieres mostrar submenús anidados */
+    /* Oculta submenús anidados */
     #nav ul ul {
       display: none !important;
     }
