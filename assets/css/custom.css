@@ -519,185 +519,101 @@ html {
     margin-top: -80px;
     scroll-margin-top: 80px;
 }
+/* ======= MENÚ RESPONSIVE UNIFICADO ======= */
 
-/* Ajustes responsivos para la navegación secundaria */
-@media screen and (max-width: 736px) {
-    .secondary-menu {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-    
-    .secondary-menu-item {
-        padding: 10px 15px;
-        font-size: 0.9em;
-    }
-    
-    .secondary-nav {
-        top: 44px;
-    }
-}
-
-/* Ajustes específicos para dispositivos móviles */
-@media screen and (max-width: 480px) {
-    .media-section {
-        padding: 1em;
-    }
-
-    .gallery {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .gallery-item img {
-        height: 150px;
-    }
-}
-
-/* Ajustes para la navegación secundaria y el scroll */
-
-/* Asegurar que las secciones tengan el espacio adecuado para la navegación fija */
-html {
-    scroll-padding-top: 120px; /* Ajustar según la altura total de ambas barras de navegación */
-}
+/* 0) Anular el display:none de main.css */
+#nav > ul {
+    display: flex !important;
+  }
   
-/* Contenedor de secciones para mejorar el posicionamiento */
-.content-sections {
-    position: relative;
-    padding-top: 20px; /* Espacio entre la barra y el contenido */
-}
-  
-/* Estilo para la barra de navegación secundaria */
-.secondary-nav {
-    background-color: #f8f8f8;
-    border-bottom: 1px solid #e7e7e7;
-    position: sticky;
-    top: 44px; /* Ajustado para quedar debajo del nav principal */
-    z-index: 899; /* Menor que el nav principal que tiene 900 */
-    width: 100%;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    margin-bottom: 1.5em;
-}
-  
-.secondary-menu {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-  
-.secondary-menu li {
-    margin: 0;
-    padding: 0;
-}
-  
-.secondary-menu-item {
-    display: block;
-    padding: 12px 20px;
-    color: #333;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    border-bottom: 3px solid transparent;
-}
-  
-.secondary-menu-item:hover,
-.secondary-menu-item.active {
-    color: var(--color-primary, #F28E2A);
-    border-bottom: 3px solid var(--color-primary, #F28E2A);
-}
-  
-/* Estilos para las secciones de biografia */
-.bio-section {
-    display: none;
-    padding-top: 10px; /* Reducido para evitar exceso de espacio */
-    transition: opacity 0.3s ease;
-}
-  
-.bio-section.active {
-    display: block;
-    animation: fadeIn 0.5s ease-in-out;
-}
-  
-/* Asegurar que cada sección tenga suficiente altura */
-.bio-section {
-    min-height: 300px; /* Altura mínima para secciones pequeñas */
-}
-  
-/* Ajuste para dispositivos móviles */
-@media screen and (max-width: 736px) {
-    .secondary-menu {
-        flex-wrap: wrap;
-    }
-    
-    .secondary-menu-item {
-        padding: 10px 15px;
-        font-size: 0.9em;
-    }
-    
-    .secondary-nav {
-        top: 44px; /* Ajustado para móviles (altura del titleBar) */
-    }
-    
-    html {
-        scroll-padding-top: 100px; /* Reducir en móviles */
-    }
-}
-  
-/* Para ayudar con la visualización de secciones en la depuración */
-.bio-section {
-    border-top: 1px solid transparent; /* Invisible, solo para crear un punto de anclaje */
-    scroll-margin-top: 120px; /* Para navegadores modernos - debe coincidir con scroll-padding-top */
-}
-  
-/* Estilos para el contenido principal del artículo */
-.box.post {
-    position: relative; /* Necesario para el posicionamiento correcto de elementos internos */
-}
-  
-/* Eliminar antiguo sistema de pestañas si existe */
-.bio-nav {
-    display: none; /* Ocultar la antigua navegación si existe */
-}/* — Menú horizontal responsive para pantallas ≤ 800px — */
-@media screen and (max-width: 800px) {
-    /* 1) Forzar que tu <nav id="nav"> esté siempre visible */
+  /* 1. Desktop (≥1024px): estático/transparente */
+  @media (min-width: 1024px) {
     #nav {
-      display: block !important;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255,255,255,0.95);
-      z-index: 1000;
+      position: static !important;
+      background: transparent !important;
+      height: var(--nav-height-desktop) !important;
     }
-  
-    /* 2) Convierto la UL en flex‑fila */
+    body { padding-top: 0 !important; }
     #nav ul {
       display: flex !important;
-      flex-wrap: wrap !important;               /* permite salto si faltan espacios */
-      justify-content: center !important;       /* centrar items */
+      flex-wrap: nowrap !important;
+      justify-content: flex-start !important;
       align-items: center !important;
       margin: 0 !important;
       padding: 0 !important;
       list-style: none !important;
     }
+    #nav li {
+      flex: 0 0 auto !important;
+      margin: 0 1rem 0 0 !important;
+    }
+    #nav a {
+      padding: 0.8rem 0 !important;
+    }
+  }
   
-    /* 3) Cada LI con ancho automático y margen */
+  /* 2. Tablet (768–1023px): sticky, fondo blanco, wrap */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    #nav {
+      position: sticky !important;
+      top: 0 !important;
+      background: var(--color-light) !important;
+      height: var(--nav-height-tablet) !important;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+      z-index: 1000 !important;
+    }
+    body { padding-top: var(--nav-height-tablet) !important; }
+    #nav ul {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+      align-items: center !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      list-style: none !important;
+    }
     #nav li {
       flex: 1 1 auto !important;
       margin: 0.2rem !important;
-      width: auto !important;
     }
-  
-    /* 4) Cada enlace block‑tap y padding cómodo */
     #nav a {
       display: block !important;
       padding: 0.6rem 1rem !important;
-      text-align: center !important;
-      white-space: nowrap !important;           /* evita que el texto se enrolle */
+      white-space: nowrap !important;
     }
+  }
   
-    /* 5) Ocultar cualquier sub‑lista si no la necesitas */
-    #nav ul ul {
-      display: none !important;
+  /* 3. Móvil (≤767px): sticky, fondo blanco, scroll horizontal */
+  @media (max-width: 767px) {
+    #nav {
+      display: block !important;
+      position: sticky !important;
+      top: 0 !important;
+      background: var(--color-light) !important;
+      height: var(--nav-height-mobile) !important;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+      z-index: 1000 !important;
+    }
+    body { padding-top: var(--nav-height-mobile) !important; }
+    #nav ul {
+      display: flex !important;
+      flex-wrap: nowrap !important;
+      overflow-x: auto !important;
+      justify-content: space-evenly !important;
+      align-items: center !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      list-style: none !important;
+    }
+    #nav li {
+      flex: 0 0 auto !important;
+      margin: 0 0.3rem !important;
+    }
+    #nav a {
+      display: block !important;
+      padding: 0.4rem 0.8rem !important;
+      font-size: 0.9rem !important;
+      white-space: nowrap !important;
     }
   }
   
