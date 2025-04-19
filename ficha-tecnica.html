@@ -143,7 +143,6 @@
 			<header id="header">
 				<div class="logo container">
 					<div>
-						<h1><a href="home.html" id="logo">
 							<img src="MM_LOGOS/LOGOTIPO/PNG/MINIMAL MARIMBA.png" alt="Minimal Marimba" class="logo-image">
 						</a></h1>
 						<p>Especificaciones y requerimientos técnicos</p>
@@ -639,6 +638,111 @@
 				});
 			});
 		</script>
+		<!-- Lightbox -->
+<div id="lightbox">
+	<div class="lightbox-container">
+	  <img class="lightbox-image" src="" alt="">
+	  <div class="lightbox-caption"></div>
+	  <div class="lightbox-counter"></div>
+	  <div class="close-btn">×</div>
+	  <div class="nav-btn prev-btn">‹</div>
+	  <div class="nav-btn next-btn">›</div>
+	</div>
+  </div>
+  <script>
+	document.addEventListener('DOMContentLoaded', function() {
+	  // Configuración del lightbox
+	  const lightbox = document.getElementById('lightbox');
+	  const lightboxImg = document.querySelector('.lightbox-image');
+	  const lightboxCaption = document.querySelector('.lightbox-caption');
+	  const lightboxCounter = document.querySelector('.lightbox-counter');
+	  const closeBtn = document.querySelector('.close-btn');
+	  const prevBtn = document.querySelector('.prev-btn');
+	  const nextBtn = document.querySelector('.next-btn');
+	  
+	  // Variables para la navegación
+	  let currentGallery = [];
+	  let currentIndex = 0;
+	  
+	  // Función para abrir el lightbox
+	  function openLightbox(img) {
+		const gallery = img.closest('.gallery');
+		currentGallery = Array.from(gallery.querySelectorAll('.gallery-item img'));
+		currentIndex = currentGallery.indexOf(img);
 		
+		updateLightboxContent();
+		lightbox.classList.add('active');
+		document.body.style.overflow = 'hidden';
+	  }
+	  
+	  // Actualizar el contenido del lightbox
+	  function updateLightboxContent() {
+		const img = currentGallery[currentIndex];
+		const fullSrc = img.getAttribute('data-full') || img.src;
+		
+		lightboxImg.src = fullSrc;
+		lightboxImg.alt = img.alt;
+		
+		const figcaption = img.closest('.gallery-item').querySelector('figcaption');
+		lightboxCaption.textContent = figcaption ? figcaption.textContent : '';
+		
+		lightboxCounter.textContent = `${currentIndex + 1} / ${currentGallery.length}`;
+	  }
+	  
+	  // Cerrar el lightbox
+	  function closeLightbox() {
+		lightbox.classList.remove('active');
+		document.body.style.overflow = '';
+	  }
+	  
+	  // Imagen anterior
+	  function prevImage() {
+		currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+		updateLightboxContent();
+	  }
+	  
+	  // Imagen siguiente
+	  function nextImage() {
+		currentIndex = (currentIndex + 1) % currentGallery.length;
+		updateLightboxContent();
+	  }
+	  
+	  // Eventos para las imágenes de la galería
+	  document.querySelectorAll('.gallery-item img').forEach(function(img) {
+		img.addEventListener('click', function() {
+		  openLightbox(this);
+		});
+	  });
+	  
+	  // Eventos de navegación
+	  closeBtn.addEventListener('click', closeLightbox);
+	  prevBtn.addEventListener('click', prevImage);
+	  nextBtn.addEventListener('click', nextImage);
+	  
+	  // Navegación con teclado
+	  document.addEventListener('keydown', function(e) {
+		if (!lightbox.classList.contains('active')) return;
+		
+		switch (e.key) {
+		  case 'Escape':
+			closeLightbox();
+			break;
+		  case 'ArrowLeft':
+			prevImage();
+			break;
+		  case 'ArrowRight':
+			nextImage();
+			break;
+		}
+	  });
+	  
+	  // Cerrar al hacer clic fuera de la imagen
+	  lightbox.addEventListener('click', function(e) {
+		if (e.target === lightbox) {
+		  closeLightbox();
+		}
+	  });
+	});
+  </script>
 	</body>
 </html>
