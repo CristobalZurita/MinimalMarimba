@@ -1,7 +1,4 @@
-/**
- * proyecto.js - Funcionalidades específicas para la página de proyecto
- * Minimal Marimba
- */
+/* main.js*/ 
 
 document.addEventListener('DOMContentLoaded', function() {
 	// Obtener referencias a elementos
