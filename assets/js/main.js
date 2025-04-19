@@ -2,11 +2,13 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 	// Obtener referencias a elementos
-	const secondaryMenuItems = document.querySelectorAll('.secondary-menu-item');
+	const secondaryMenuItems = document.querySelectorAll('.secondary-menu-item, .media-tab');
 	const bioSections = document.querySelectorAll('.bio-section');
 	const backToTopBtn = document.querySelector('.back-to-top');
 	const mainNav = document.querySelector('#nav');
 	const secondaryNav = document.querySelector('.secondary-nav');
+	
+
 	
 	// Calcular altura de las barras de navegación para el scroll
 	function getNavHeightsTotal() {
@@ -66,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	  item.addEventListener('click', function(e) {
 		e.preventDefault();
 		
-		const section = this.getAttribute('data-section');
+		const section = this.getAttribute('data-section') || (this.hasAttribute('href') ? this.getAttribute('href').substring(1) : '');
 		
 		// Actualizar menú activo sin esperar al evento hashchange
 		secondaryMenuItems.forEach(mi => mi.classList.remove('active'));
