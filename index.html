@@ -1,94 +1,98 @@
 <!-- index.html -->
-
 <!DOCTYPE HTML>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta 
-    name="viewport" 
-    content="width=device-width, initial-scale=1, user-scalable=no" 
-  />
-  <title>
-    Minimal Marimba | Percusión contemporánea &amp; Experimentación electrónica
-  </title>
-  <meta 
-    name="description" 
-    content="Minimal Marimba - Proyecto artístico de percusión contemporánea y experimentación electrónica." 
-  />
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <style>
-    /* Cuerpo y splash fullscreen */
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #000;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    .splash-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      width: 100%;
-    }
-
-	.logo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+<meta charset="utf-8" />
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1, user-scalable=no"
+/>
+<title>
+ Minimal Marimba | Percusión contemporánea &amp; Experimentación electrónica
+</title>
+<meta
+name="description"
+content="Minimal Marimba - Proyecto artístico de percusión contemporánea y experimentación electrónica."
+/>
+<!-- Open Graph Meta Tags para Facebook y otras redes sociales -->
+<meta property="og:title" content="Minimal Marimba | Percusión contemporánea &amp; Experimentación electrónica" />
+<meta property="og:description" content="Minimal Marimba - Proyecto artístico de percusión contemporánea y experimentación electrónica." />
+<meta property="og:image" content="https://cristobalzurita.github.io/MinimalMarimba/MM_LOGOS/LOGOTIPO/PNG/Logo_white_yellowe.png" />
+<meta property="og:url" content="https://cristobalzurita.github.io/MinimalMarimba/" />
+<meta property="og:type" content="website" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<!-- Twitter Card Tags -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Minimal Marimba | Percusión contemporánea &amp; Experimentación electrónica" />
+<meta name="twitter:description" content="Minimal Marimba - Proyecto artístico de percusión contemporánea y experimentación electrónica." />
+<meta name="twitter:image" content="https://cristobalzurita.github.io/MinimalMarimba/MM_LOGOS/LOGOTIPO/PNG/Logo_white_yellowe.png" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<style>
+/* Cuerpo y splash fullscreen */
+body {
+margin: 0;
+padding: 0;
+background-color: #000;
+height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+ }
+.splash-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+width: 100%;
+ }
+.logo-container {
+display: flex;
+justify-content: center;
+align-items: center;
 }
-
 .logo-container img {
-  width: 50%;
-  height: auto;
-  display: block;}
-
-
-
-    .enter-button {
-      background-color: rgba(255, 255, 255, 0.9);
-      color: #F28E2A;
-      font-weight: bold;
-      text-transform: uppercase;
-      padding: 10px 30px;
-      border-radius: 4px;
-      text-decoration: none;
-      font-size: 1.5em;
-      letter-spacing: 1px;
-      transition: all 0.3s ease;
-      animation: fadeIn 3s;
-      display: inline-block;
-      margin-top: 65px;
-    }
-
-    .enter-button:hover {
-      background-color: #fff;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
-  </style>
+width: 50%;
+height: auto;
+display: block;}
+.enter-button {
+background-color: rgba(255, 255, 255, 0.9);
+color: #F28E2A;
+font-weight: bold;
+text-transform: uppercase;
+padding: 10px 30px;
+border-radius: 4px;
+text-decoration: none;
+font-size: 1.5em;
+letter-spacing: 1px;
+transition: all 0.3s ease;
+animation: fadeIn 3s;
+display: inline-block;
+margin-top: 65px;
+ }
+.enter-button:hover {
+background-color: #fff;
+transform: translateY(-2px);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+ }
+@keyframes fadeIn {
+ from { opacity: 0; }
+ to { opacity: 1; }
+ }
+</style>
 </head>
 <body>
-  <div class="splash-container">
-    <div class="logo-container">
-      <img 
-        src="MM_LOGOS/LOGOTIPO/PNG/Logo_white_yellowe.png" 
-        alt="Minimal Marimba Logo" 
-      />
-    </div>
-    <a href="home.html" class="enter-button">Entrar</a>
-  </div>
+<div class="splash-container">
+<div class="logo-container">
+<img
+src="MM_LOGOS/LOGOTIPO/PNG/Logo_white_yellowe.png"
+alt="Minimal Marimba Logo"
+/>
+</div>
+<a href="home.html" class="enter-button">Entrar</a>
+</div>
 </body>
 </html>
