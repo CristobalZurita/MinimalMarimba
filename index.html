@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Minimal Marimba | Percusión contemporánea & Experimentación electrónica</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Minimal Marimba - Proyecto artístico de percusión contemporánea y experimentación electrónica." />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				background-color: #000000;
+				height: 100vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+			}
+			
+			.splash-container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				height: 100vh;
+				width: 100%;
+			}
+			
+			.logo-container {
+				max-width: 70%;
+				margin-bottom: 50px;
+				animation: fadeIn 2s;
+			}
+			
+			.logo-container img {
+				width: 100%;
+				height: auto;
+			}
+			//
+			.enter-button {
+				background-color: rgba(255, 255, 255, 0.9);
+				color: #F28E2A;
+				font-weight: bold;
+				text-transform: uppercase;
+				padding: 10px 30px;
+				border-radius: 4px;
+				text-decoration: none;
+				font-size: 1.5em;
+				letter-spacing: 1px;
+				transition: all 0.3s ease;
+				animation: fadeIn 3s;
+				display: inline-block;
+				margin-top: 20px;
+			}
+			
+			.enter-button:hover {
+				background-color: white;
+				transform: translateY(-2px);
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			}
+			
+			@keyframes fadeIn {
+				from { opacity: 0; }
+				to { opacity: 1; }
+			}
+		</style>
+	</head>
+	<body>
+		<div class="splash-container">
+			<div class="logo-container">
+				<img src="MM_LOGOS/LOGOTIPO/PNG/Logo_white_yellowe.png" alt="Minimal Marimba">
+			</div>
+			<a href="home.html" class="enter-button">Entrar</a>
+		</div>
+	</body>
+</html>

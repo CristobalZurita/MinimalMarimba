@@ -1,0 +1,1132 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Media | Minimal Marimba</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="description" content="Galería multimedia de Minimal Marimba - Proyecto artístico de percusión contemporánea y experimentación electrónica." />
+<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" href="assets/css/custom.css" />
+<link rel="stylesheet" href="css/reset-menu-mobile.css">
+<style>
+.gallery {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+grid-gap: 1.5em;
+margin-top: 2em;
+ }
+.gallery-item {
+border-radius: 8px;
+overflow: hidden;
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+transition: all 0.3s ease;
+cursor: pointer;
+background: white;
+ }
+.gallery-item:hover {
+transform: translateY(-8px);
+box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+ }
+.gallery-item img {
+width: 100%;
+height: 220px;
+object-fit: cover;
+display: block;
+ }
+.gallery-item figcaption {
+padding: 0.75em;
+
+text-align: center;
+font-size: 0.9em;
+ }
+.video-container {
+position: relative;
+padding-bottom: 56.25%; /* 16:9 aspect ratio */
+height: 0;
+overflow: hidden;
+margin-bottom: 2em;
+ }
+.video-container iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+border: 0;
+ }
+.media-section {
+margin-bottom: 4em;
+background-color: #f9f9f9;
+padding: 2em;
+border-radius: 10px;
+box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+ }
+/* Lightbox mejorado */
+#lightbox {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.9);
+display: none;
+z-index: 1000;
+justify-content: center;
+align-items: center;
+ }
+#lightbox.active {
+display: flex;
+ }
+.lightbox-container {
+position: relative;
+max-width: 90%;
+max-height: 90vh;
+ }
+.lightbox-image {
+max-width: 100%;
+max-height: 80vh;
+object-fit: contain;
+display: block;
+border: 2px solid rgba(255,255,255,0.2);
+border-radius: 3px;
+ }
+.lightbox-caption {
+color: white;
+text-align: center;
+padding: 10px 0;
+font-size: 1em;
+ }
+.lightbox-counter {
+position: absolute;
+bottom: -30px;
+left: 0;
+color: white;
+font-size: 0.9em;
+ }
+.close-btn {
+position: absolute;
+top: -40px;
+right: -40px;
+width: 40px;
+height: 40px;
+background-color: rgba(242, 142, 42, 0.8);
+color: white;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+z-index: 1002;
+transition: background-color 0.3s ease;
+ }
+.close-btn:hover {
+background-color: var(--color-primary);
+ }
+.nav-btn {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+width: 50px;
+height: 50px;
+background-color: rgba(0,0,0,0.5);
+color: white;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+z-index: 1001;
+transition: all 0.3s ease;
+ }
+.prev-btn {
+left: -70px;
+ }
+.next-btn {
+right: -70px;
+ }
+.nav-btn:hover {
+background-color: rgba(242, 142, 42, 0.8);
+ }
+/* Estilo para el botón de volver arriba */
+.back-to-top {
+position: fixed;
+bottom: 2em;
+right: 2em;
+background-color: #F28E2A;
+color: white;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+text-decoration: none;
+z-index: 999;
+ }
+.back-to-top i {
+font-size: 1.2em;
+ }
+/* Estilos adicionales para centrado */
+.logo-centered {
+text-align: center;
+margin: 0 auto;
+ }
+.box.post {
+margin: 0 auto;
+max-width: 900px;
+ }
+.content-centered {
+margin: 0 auto;
+text-align: center;
+ }
+header {
+text-align: center;
+ }
+/* Estilos para tabs de navegación */
+.media-tabs {
+display: flex;
+justify-content: center;
+margin: 2em 0;
+border-bottom: 2px solid #ddd;
+ }
+.media-tab {
+padding: 1em 2em;
+margin: 0 0.5em;
+background-color: #f5f5f5;
+border-radius: 5px 5px 0 0;
+cursor: pointer;
+font-weight: bold;
+transition: all 0.3s;
+ }
+.media-tab:hover {
+background-color: #e0e0e0;
+ }
+.media-tab.active {
+background-color: #F28E2A;
+color: white;
+ }
+/* Secciones principales */
+.main-section {
+margin-top: 2em;
+ }
+.main-section:not(.active) {
+display: none;
+ }
+/* Responsive para móviles */
+@media screen and (max-width: 768px) {
+.gallery {
+grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+grid-gap: 1em;
+ }
+.gallery-item img {
+height: 180px;
+ }
+.prev-btn {
+left: -45px;
+ }
+.next-btn {
+right: -45px;
+ }
+.nav-btn {
+width: 40px;
+height: 40px;
+ }
+.close-btn {
+top: -30px;
+right: -30px;
+width: 35px;
+height: 35px;
+ }
+ }
+@media screen and (max-width: 480px) {
+.media-section {
+padding: 1em;
+ }
+.gallery {
+grid-template-columns: 1fr 1fr;
+ }
+.gallery-item img {
+height: 140px;
+ }
+.prev-btn {
+left: 10px;
+ }
+.next-btn {
+right: 10px;
+ }
+.media-tab {
+padding: 0.75em 1em;
+font-size: 0.9em;
+ }
+ }
+</style>
+</head>
+<body class="homepage is-preload">
+<div id="page-wrapper">
+
+<header id="header">
+<div class="logo container">
+<div class="logo-centered">
+<h1><a href="index.html" id="logo">
+<img src="MM_LOGOS/LOGOTIPO/PNG/MINIMAL MARIMBA.png" alt="Minimal Marimba" class="logo-image">
+</a></h1>
+<p>Galería multimedia y material audiovisual</p>
+</div>
+</div>
+</header>
+<!-- Nav -->
+<nav id="nav">
+<ul>
+<li><a href="home.html">Home</a></li>
+<li>
+<a href="proyecto.html">Proyecto</a>
+<ul>
+<li><a href="proyecto.html#concepto">Concepto</a></li>
+<li><a href="proyecto.html#trayectoria">Trayectoria</a></li>
+<li><a href="proyecto.html#vision">Visión Artística</a></li>
+</ul>
+</li>
+<li class="current"><a href="media.html">Media</a></li>
+<li><a href="ficha-tecnica.html">Ficha Técnica</a></li>
+</ul>
+</nav>
+<!-- Main -->
+<section id="main">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<!-- Content -->
+<article class="box post">
+<header>
+<h2>Material Audiovisual</h2>
+<p>Recorrido visual por diferentes proyectos y presentaciones</p>
+<!-- Tabs de navegación -->
+<div class="media-tabs">
+<div class="media-tab active" data-target="fotos-section">FOTOS</div>
+<div class="media-tab" data-target="videos-section">VIDEOS</div>
+</div>
+</header>
+<div id="fotos-section" class="main-section active">
+<!-- Sección Marimba -->
+<section id="marimba" class="media-section">
+<h3>Marimba Solista y Conjunto</h3>
+<p>Interpretaciones en formato solista y conjunto de obras clásicas y contemporáneas para marimba desde mis inicios (14 años) hasta la actualidad (41 años).</p>
+<div class="gallery" data-category="marimba">
+<!-- Imágenes de la carpeta Marimba -->
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/01.jpg" alt="Interpretación de marimba" data-full="FOTOS/Conciertos/01.jpg">
+<figcaption>Final Concierto Rythmus</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/02.jpg" alt="Concierto" data-full="FOTOS/Conciertos/02.jpg">
+<figcaption>Concierto título Lorena Vergara</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/03.jpg" alt="Detalle de ejecución" data-full="FOTOS/Conciertos/03.jpg">
+<figcaption>Concierto Rythmus</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/04.jpg" alt="Recital" data-full="FOTOS/Conciertos/04.jpg">
+<figcaption>Concierto Rythmus</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/05.jpg" alt="Masterclass" data-full="FOTOS/Conciertos/05.jpg">
+<figcaption>Concierto Rythmus</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/06.jpg" alt="Concierto" data-full="FOTOS/Conciertos/06.jpg">
+<figcaption>Concierto Rythmus</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/07.jpg" alt="Estudio" data-full="FOTOS/Conciertos/07.jpg">
+<figcaption>Concierto Rythmus</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/08.jpg" alt="Recital" data-full="FOTOS/Conciertos/08.jpg">
+<figcaption>Concierto Rythmus</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/09.jpg" alt="Ensamble" data-full="FOTOS/Conciertos/09.jpg">
+<figcaption>Concierto Rythmus</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/10.jpg" alt="Dúo" data-full="FOTOS/Conciertos/10.jpg">
+<figcaption>Duo con Marco Soto</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/11.jpg" alt="Festival" data-full="FOTOS/Conciertos/11.jpg">
+<figcaption>Concierto Rythmus</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/12.jpg" alt="Concierto" data-full="FOTOS/Conciertos/12.jpg">
+<figcaption>Concierto Rythmus</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/13.jpg" alt="Concierto" data-full="FOTOS/Conciertos/12.jpg">
+<figcaption>Concierto Rythmus</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/14.jpg" alt="Percusión" data-full="FOTOS/Conciertos/14.jpg">
+<figcaption>Concierto Rythmus</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/15.jpg" alt="Retrato" data-full="FOTOS/Conciertos/15.jpg">
+<figcaption>Coro Universidad mayor, Teatro Municipal de Santiago</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/20.jpg" alt="Concierto" data-full="FOTOS/Conciertos/20.jpg">
+<figcaption>Concierto para la comunidad al aire libre</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/21.jpg" alt="Concierto" data-full="FOTOS/Conciertos/21.jpg">
+<figcaption>Concierto para la comunidad al aire libre</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/22.jpg" alt="Concierto" data-full="FOTOS/Conciertos/22.jpg">
+<figcaption>Concierto para la comunidad al aire libre</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/23.jpg" alt="Concierto" data-full="FOTOS/Conciertos/23.jpg">
+<figcaption>Concierto para la comunidad al aire libre</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/24.jpg" alt="Concierto" data-full="FOTOS/Conciertos/24.jpg">
+<figcaption>Concierto para la comunidad al aire libre</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/25.jpg" alt="Concierto" data-full="FOTOS/Conciertos/25.jpg">
+<figcaption>Concierto para la comunidad al aire libre</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/26.jpg" alt="Festival" data-full="FOTOS/Conciertos/26.jpg">
+<figcaption>Concierto para la comunidad al aire libre</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/27.jpg" alt="Concierto" data-full="FOTOS/Conciertos/27.jpg">
+<figcaption>Concierto para la comunidad al aire libre</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/31.jpg" alt="Festival" data-full="FOTOS/Conciertos/31.jpg">
+<figcaption>Concierto para la comunidad al aire libre</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/32.jpg" alt="Concierto" data-full="FOTOS/Conciertos/32.jpg">
+<figcaption>Concierto para la comunidad al aire libre</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/33.jpg" alt="Percusión" data-full="FOTOS/Conciertos/33.jpg">
+<figcaption>Concierto para la comunidad al aire libre</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/35.jpg" alt="Dúo" data-full="FOTOS/Conciertos/35.jpg">
+<figcaption>Concierto para la comunidad al aire libre</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/36.jpg" alt="Festival" data-full="FOTOS/Conciertos/36.jpg">
+<figcaption>Concierto para la comunidad al aire libre</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/38.jpg" alt="Percusión" data-full="FOTOS/Conciertos/38.jpg">
+<figcaption>Concierto para la comunidad al aire libre</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Conciertos/39.jpg" alt="Percusión" data-full="FOTOS/Conciertos/39.jpg">
+<figcaption>Intervención Iglesia Compañía de Jesís, Valparaíso</figcaption>
+</figure>
+</div>
+</section>
+<!-- Sección Programas de Concierto -->
+<section id="programas" class="media-section">
+<h3>Programas de Concierto</h3>
+<p>Programas de conciertos de música clásica y contemporánea, tanto en conjunto como solista.</p>
+<div class="gallery" data-category="programas">
+<!-- Imágenes de la carpeta Programas -->
+<figure class="gallery-item">
+<img src="FOTOS/Programas/01.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/01.jpg">
+<figcaption>Recital de Marimba</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/02.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/02.jpg">
+<figcaption>Festival de Percusión</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/03.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/03.jpg">
+<figcaption>Concierto Didáctico</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/04.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/04.jpg">
+<figcaption>Orquesta Sinfónica</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/05.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/05.jpg">
+<figcaption>Ciclo Bach</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/06.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/06.jpg">
+<figcaption>Festival Internacional</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/07.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/07.jpg">
+<figcaption>Recital Universidad de Chile</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/08.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/08.jpg">
+<figcaption>Concierto Teatro Municipal</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/09.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/09.jpg">
+<figcaption>Recital de Graduación</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/10.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/10.jpg">
+<figcaption>Música Contemporánea</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/11.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/11.jpg">
+<figcaption>Temporada 2023</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/12.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/12.jpg">
+<figcaption>Recital de Marimba</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/14.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/14.jpg">
+<figcaption>Recital de Marimba</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/15.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/15.jpg">
+<figcaption>Concierto Didáctico</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/17.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/17.jpg">
+<figcaption>Ciclo Bach</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/18.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/18.jpg">
+<figcaption>Festival Internacional</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/19.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/19.jpg">
+<figcaption>Recital Universidad de Chile</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/20.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/20.jpg">
+<figcaption>Concierto Teatro Municipal</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/21.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/21.jpg">
+<figcaption>Recital de Graduación</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/22.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/22.jpg">
+<figcaption>Música Contemporánea</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/23.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/23.jpg">
+<figcaption>Música Contemporánea</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/24.png" alt="Programa de concierto" data-full="FOTOS/Programas/24.png">
+<figcaption>Música Contemporánea</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/25.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/25.jpg">
+<figcaption>Música Contemporánea</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/26.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/26.jpg">
+<figcaption>Música Contemporánea</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/27.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/27.jpg">
+<figcaption>Música Contemporánea</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/28.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/28.jpg">
+<figcaption>Música Contemporánea</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/29.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/29.jpg">
+<figcaption>Música Contemporánea</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/30.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/30.jpg">
+<figcaption>Música Contemporánea</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/31.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/31.jpg">
+<figcaption>Música Contemporánea</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/32.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/32.jpg">
+<figcaption>Música Contemporánea</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/33.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/33.jpg">
+<figcaption>Música Contemporánea</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/34.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/34.jpg">
+<figcaption>Música Contemporánea</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/35.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/35.jpg">
+<figcaption>Música Contemporánea</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/36.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/36.jpg">
+<figcaption>Música Contemporánea</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/37.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/37.jpg">
+<figcaption>Música Contemporánea</figcaption>
+</figure>
+<figure class="gallery-item">
+<img src="FOTOS/Programas/38.jpg" alt="Programa de concierto" data-full="FOTOS/Programas/38.jpg">
+<figcaption>Música Contemporánea</figcaption>
+</figure>
+</div>
+</section>
+
+<!-- CERTIFICADOS -->
+<section id="electronica" class="media-section">
+	<h3>Certificados y Diplomas</h3>
+	<div class="gallery" data-category="electronica">
+	<!-- Imágenes de la carpeta Electronica -->
+	<figure class="gallery-item">
+	<img src="FOTOS/Certificados/01.jpg" alt="Setup electrónico" data-full="FOTOS/Certificados/01.jpg">
+	<figcaption>Setup de sintetizadores</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/Certificados/02.jpg" alt="Performance en vivo" data-full="FOTOS/Certificados/02.jpg">
+	<figcaption>MENG-Âmok en directo</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/Certificados/03.jpg" alt="Estudio de grabación" data-full="FOTOS/Certificados/03.jpg">
+	<figcaption>Sesión de estudio</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/Certificados/04.jpg" alt="Estudio de grabación" data-full="FOTOS/Certificados/04.jpg">
+	<figcaption>Sesión de estudio</figcaption>
+	</figure>
+	</div>
+	</section>
+	<!-- Seminario y Cuba -->
+	<section id="electronica" class="media-section">
+	<h3>Seminario Marimba y Cuba</h3>
+	<p>Fotos grupales de las experiencias de los Seminarios en Viña del Mar, Chile y Habana, Cuba.</p>
+	<div class="gallery" data-category="electronica">
+	<!-- Imágenes de la carpeta Electronica -->
+	<figure class="gallery-item">
+	<img src="FOTOS/seminario/05.jpg" alt="Estudio de grabación" data-full="FOTOS/seminario/05.jpg">
+	<figcaption>Sesión de estudio</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/seminario/06.jpg" alt="Estudio de grabación" data-full="FOTOS/seminario/06.jpg">
+	<figcaption>Sesión de estudio</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/seminario/01.jpg" alt="Setup electrónico" data-full="FOTOS/seminario/01.jpg">
+	<figcaption>Setup de sintetizadores</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/seminario/02.jpg" alt="Performance en vivo" data-full="FOTOS/seminario/02.jpg">
+	<figcaption>MENG-Âmok en directo</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/seminario/03.jpg" alt="Estudio de grabación" data-full="FOTOS/seminario/03.jpg">
+	<figcaption>Sesión de estudio</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/seminario/04.jpg" alt="Estudio de grabación" data-full="FOTOS/seminario/04.jpg">
+	<figcaption>Sesión de estudio</figcaption>
+	</figure>
+	</div>
+	</section>
+	<!-- Sección Presentaciones en Vivo -->
+	<section id="tocatas" class="media-section">
+	<h3>Registro Tocatas</h3>
+	<p>Presentaciones tanto en batería como con sintetizadores.</p>
+	<div class="gallery" data-category="tocatas">
+	<!-- Imágenes de la carpeta tocatas -->
+	<figure class="gallery-item">
+	<img src="FOTOS/tocatas/01.jpg" alt="Concierto en vivo" data-full="FOTOS/tocatas/01.jpg">
+	<figcaption>Teatro Municipal (2023)</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/tocatas/02.jpg" alt="Festival" data-full="FOTOS/tocatas/02.jpg">
+	<figcaption>Festival Internacional de Percusión</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/tocatas/03.jpg" alt="Club nocturno" data-full="FOTOS/tocatas/03.jpg">
+	<figcaption>Club Subterráneo - Santiago</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/tocatas/04.jpg" alt="Presentación" data-full="FOTOS/tocatas/04.jpg">
+	<figcaption>Intervención urbana - Plaza</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/tocatas/05.jpg" alt="Festival" data-full="FOTOS/tocatas/05.jpg">
+	<figcaption>Festival Fusión - Valparaíso</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/tocatas/06.jpg" alt="Recital" data-full="FOTOS/tocatas/06.jpg">
+	<figcaption>Universidad de Chile</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/tocatas/07.jpg" alt="Concierto" data-full="FOTOS/tocatas/07.jpg">
+	<figcaption>Centro Cultural GAM</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/tocatas/08.jpg" alt="Presentación" data-full="FOTOS/tocatas/08.jpg">
+	<figcaption>Teatro CEAC</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/tocatas/08.jpg" alt="Presentación" data-full="FOTOS/tocatas/08.jpg">
+	<figcaption>Teatro CEAC</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/tocatas/09.jpg" alt="Presentación" data-full="FOTOS/tocatas/09.jpg">
+	<figcaption>Teatro CEAC</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/tocatas/10.jpg" alt="Presentación" data-full="FOTOS/tocatas/10.jpg">
+	<figcaption>Teatro CEAC</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/tocatas/11.jpg" alt="Presentación" data-full="FOTOS/tocatas/11.jpg">
+	<figcaption>Teatro CEAC</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/tocatas/12.jpg" alt="Presentación" data-full="FOTOS/tocatas/12.jpg">
+	<figcaption>Teatro CEAC</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/tocatas/13.jpg" alt="Presentación" data-full="FOTOS/tocatas/13.jpg">
+	<figcaption>Teatro CEAC</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/tocatas/14.jpg" alt="Presentación" data-full="FOTOS/tocatas/14.jpg">
+	<figcaption>Teatro CEAC</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/tocatas/15.jpg" alt="Presentación" data-full="FOTOS/tocatas/15.jpg">
+	<figcaption>Teatro CEAC</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/tocatas/16.jpg" alt="Presentación" data-full="FOTOS/tocatas/16.jpg">
+	<figcaption>Teatro CEAC</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/tocatas/17.jpg" alt="Presentación" data-full="FOTOS/tocatas/17.jpg">
+	<figcaption>Teatro CEAC</figcaption>
+	</figure>
+	</div>
+	</section>
+	<!-- Sección Afiches -->
+	<section id="afiches" class="media-section">
+	<h3>Afiches de Tocatas con Bandas</h3>
+	<p>Afiches de diferentes tocatas.</p>
+	<div class="gallery" data-category="afiches">
+	<!-- Imágenes de la carpeta Afiches -->
+	<figure class="gallery-item">
+	<img src="FOTOS/afiches/01.jpg" alt="Afiche de concierto" data-full="FOTOS/afiches/01.jpg">
+	<figcaption>Concierto Ensamble</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/afiches/02.jpg" alt="Afiche de concierto" data-full="FOTOS/afiches/02.jpg">
+	<figcaption>Concierto Ensamble</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/afiches/03.jpg" alt="Afiche de concierto" data-full="FOTOS/afiches/03.jpg">
+	<figcaption>Concierto Ensamble</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/afiches/04.jpg" alt="Afiche de concierto" data-full="FOTOS/afiches/04.jpg">
+	<figcaption>Concierto Ensamble</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/afiches/05.jpg" alt="Afiche de concierto" data-full="FOTOS/afiches/05.jpg">
+	<figcaption>Concierto Ensamble</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/afiches/06.jpg" alt="Afiche de concierto" data-full="FOTOS/afiches/06.jpg">
+	<figcaption>Concierto Ensamble</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/afiches/08.jpg" alt="Afiche de concierto" data-full="FOTOS/afiches/08.jpg">
+	<figcaption>Performance Multimedia</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/afiches/09.jpg" alt="Afiche de concierto" data-full="FOTOS/afiches/09.jpg">
+	<figcaption>Ciclo de Percusión</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/afiches/10.JPG" alt="Afiche de concierto" data-full="FOTOS/afiches/10.JPG">
+	<figcaption>Festival Electrónico</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/afiches/11.jpg" alt="Afiche de concierto" data-full="FOTOS/afiches/11.jpg">
+	<figcaption>Concierto Aniversario</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/afiches/12.jpg" alt="Afiche de concierto" data-full="FOTOS/afiches/12.jpg">
+	<figcaption>Concierto Aniversario</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/afiches/13.jpg" alt="Afiche de concierto" data-full="FOTOS/afiches/13.jpg">
+	<figcaption>Concierto Aniversario</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/afiches/14.jpg" alt="Afiche de concierto" data-full="FOTOS/afiches/14.jpg">
+	<figcaption>Concierto Aniversario</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/afiches/15.jpg" alt="Afiche de concierto" data-full="FOTOS/afiches/15.jpg">
+	<figcaption>Concierto Aniversario</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/afiches/16.jpg" alt="Afiche de concierto" data-full="FOTOS/afiches/16.jpg">
+	<figcaption>Concierto Aniversario</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/afiches/17.jpg" alt="Afiche de concierto" data-full="FOTOS/afiches/17.jpg">
+	<figcaption>Concierto Aniversario</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/afiches/18.jpg" alt="Afiche de concierto" data-full="FOTOS/afiches/18.jpg">
+	<figcaption>Concierto Aniversario</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/afiches/19.jpg" alt="Afiche de concierto" data-full="FOTOS/afiches/19.jpg">
+	<figcaption>Concierto Aniversario</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/afiches/20.jpg" alt="Afiche de concierto" data-full="FOTOS/afiches/20.jpg">
+	<figcaption>Concierto Aniversario</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/afiches/21.jpg" alt="Afiche de concierto" data-full="FOTOS/afiches/21.jpg">
+	<figcaption>Concierto Aniversario</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/afiches/22.jpg" alt="Afiche de concierto" data-full="FOTOS/afiches/22.jpg">
+	<figcaption>Concierto Aniversario</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/afiches/23.jpg" alt="Afiche de concierto" data-full="FOTOS/afiches/23.jpg">
+	<figcaption>Concierto Aniversario</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/afiches/24.jpg" alt="Afiche de concierto" data-full="FOTOS/afiches/24.jpg">
+	<figcaption>Concierto Aniversario</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/afiches/25.jpg" alt="Afiche de concierto" data-full="FOTOS/afiches/25.jpg">
+	<figcaption>Concierto Aniversario</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/afiches/27.jpg" alt="Afiche de concierto" data-full="FOTOS/afiches/27.jpg">
+	<figcaption>Concierto Aniversario</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/afiches/28.png" alt="Afiche de concierto" data-full="FOTOS/afiches/28.png">
+	<figcaption>Concierto Aniversario</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/afiches/29.gif" alt="Afiche de concierto" data-full="FOTOS/afiches/29.gif">
+	<figcaption>Concierto Aniversario</figcaption>
+	</figure>
+	</div>
+	</section>
+	<!-- MARIMBA -->
+	<section id="electronica" class="media-section">
+	<h3>Marimba</h3>
+	<div class="gallery" data-category="electronica">
+	<!-- Imágenes de la carpeta Electronica -->
+	<figure class="gallery-item">
+	<img src="FOTOS/marimbaFotos/01.jpg" alt="Setup electrónico" data-full="FOTOS/marimbaFotos/01.jpg">
+	<figcaption>Setup de sintetizadores</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS/marimbaFotos/04.jpg" alt="Estudio de grabación" data-full="FOTOS/marimbaFotos/04.jpg">
+	<figcaption>Sesión de estudio</figcaption>
+	</figure>
+	<figure class="gallery-item">
+	<img src="FOTOS//marimbaFotos/03.jpg" alt="Estudio de grabación" data-full="FOTOS/marimbaFotos/03.jpg">
+	<figcaption>Sesión de estudio</figcaption>
+	</figure>
+	</div>
+	</section>
+	</div>
+	</div>
+	<!-- SECCIÓN DE VIDEOS -->
+	<div id="videos-section" class="main-section">
+	<!-- Marimba Videos -->
+	<section id="videos-marimba" class="media-section">
+	<h3>Videos de Marimba</h3>
+	<p>Interpretaciones en formato solista de obras clásicas y contemporáneas para marimba.</p>
+	<div class="video-container">
+	<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C4qY7A5u_tP/" data-instgrm-version="14"></blockquote>
+	<script async src="//www.instagram.com/embed.js"></script>
+	</div>
+	<div class="video-container">
+	<blockquote class="instagram-media"
+	data-instgrm-captioned
+	data-instgrm-permalink="https://www.instagram.com/tv/CJZ6gkMpKVa/"
+	data-instgrm-version="14">
+	</blockquote>
+	<script async src="//www.instagram.com/embed.js"></script>
+	</div>
+	<div class="video-container">
+	<iframe
+	src="https://www.youtube.com/embed/O03Sem8Yl8Y"
+	title="Ópera Prima - Cristóbal Zurita - Ánima"
+	frameborder="0"
+	allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+	referrerpolicy="strict-origin-when-cross-origin"
+	allowfullscreen>
+	</iframe>
+	</div>
+	<p>Repertorio reciente incluye obras de:</p>
+	<ul>
+	<li>J.S. Bach - Preludio de la Suite para Violonchelo No.1</li>
+	<li>Paul Smadbeck - Rhythm Song</li>
+	<li>Keiko Abe - Michi</li>
+	<li>Mitchell Peters - Yellow After The Rain</li>
+	<li>Ney Rosauro - Preludio N°1, 2 y 3 para Marimba</li>
+	</ul>
+	</section>
+	<!-- Electrónica Videos -->
+	<section id="videos-electronica" class="media-section">
+	<h3>Videos MENG-Âmok</h3>
+	<p>Proyecto de música electrónica con actuaciones en vivo y sesiones de estudio.</p>
+	<div class="video-container">
+	<iframe
+	src="https://www.youtube.com/embed/CD8k7fqTe2U"
+	title="Grabación en vivo de MENG-Âmok del tema Gabba Attack"
+	frameborder="0"
+	allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+	referrerpolicy="strict-origin-when-cross-origin"
+	allowfullscreen>
+	</iframe>
+	</div>
+	<div class="video-container">
+	<iframe
+	src="https://www.youtube.com/embed/3Gcwt2ghd-M"
+	title="Actuación en vivo de MENG-Âmok 2015, Valparaiso, Chile."
+	frameborder="0"
+	allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+	referrerpolicy="strict-origin-when-cross-origin"
+	allowfullscreen>
+	</iframe>
+	</div>
+	<div class="video-container">
+	<iframe
+	src="https://www.youtube.com/embed/dqBBdrxq-Iw"
+	title="Actuación en vivo de MENG-Âmok"
+	frameborder="0"
+	allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+	referrerpolicy="strict-origin-when-cross-origin"
+	allowfullscreen>
+	</iframe>
+	</div>
+	<div class="video-container">
+	<iframe
+	src="https://www.youtube.com/embed/dj2tnC-nuo4"
+	title="Actuación en vivo de MENG-Âmok"
+	frameborder="0"
+	allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+	referrerpolicy="strict-origin-when-cross-origin"
+	allowfullscreen>
+	</iframe>
+	</div>
+	</section>
+	<!-- BATERIA -->
+	<section id="videos-fusion" class="media-section">
+	<h3>Baterista</h3>
+	<div class="video-container">
+	<!-- Reemplazar con link a video real cuando esté disponible -->
+	<iframe src="https://www.youtube.com/embed/2-xh-sQ-1tg" title="Fusión Marimba-Electrónica" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	<div class="video-container">
+	<!-- Reemplazar con link a video real cuando esté disponible -->
+	<iframe src="https://www.youtube.com/embed/RSYXjxPJWUI" title="Fusión Marimba-Electrónica" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	<div class="video-container">
+	<!-- Reemplazar con link a video real cuando esté disponible -->
+	<iframe src="https://www.youtube.com/embed/t4dGATk0sT0" title="Fusión Marimba-Electrónica" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	<div class="video-container">
+	<!-- Reemplazar con link a video real cuando esté disponible -->
+	<iframe src="https://www.youtube.com/embed/8pZxiGiNeyg" title="Fusión Marimba-Electrónica" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	<div class="video-container">
+	<!-- Reemplazar con link a video real cuando esté disponible -->
+	<iframe src="https://www.youtube.com/embed/20P3hcf2pwI" title="Fusión Marimba-Electrónica" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	<div class="video-container">
+	<!-- Reemplazar con link a video real cuando esté disponible -->
+	<iframe src="https://www.youtube.com/embed/XC5gfNmxvYw" title="Fusión Marimba-Electrónica" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	<div class="video-container">
+	<!-- Reemplazar con link a video real cuando esté disponible -->
+	<iframe src="https://www.youtube.com/embed/cJX8BVUJM5c" title="Fusión Marimba-Electrónica" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	<div class="video-container">
+	<!-- Reemplazar con link a video real cuando esté disponible -->
+	<iframe src="https://www.youtube.com/embed/FZT8ANtfLn4" title="Fusión Marimba-Electrónica" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	<div class="video-container">
+	<!-- Reemplazar con link a video real cuando esté disponible -->
+	<iframe src="https://www.youtube.com/embed/dTBcqr1zT9I" title="Fusión Marimba-Electrónica" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	</section>
+	</div>
+	</article>
+	</div>
+	</div>
+	</div>
+	</section>
+	
+	<!-- Lightbox personalizado -->
+	<div id="lightbox">
+	  <div class="lightbox-container">
+		<img class="lightbox-image" src="" alt="">
+		<div class="lightbox-caption"></div>
+		<div class="lightbox-counter"></div>
+		<div class="close-btn">×</div>
+		<div class="nav-btn prev-btn">‹</div>
+		<div class="nav-btn next-btn">›</div>
+	  </div>
+	</div>
+	
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	
+	<script>
+	// Script para la galería de imágenes
+	document.addEventListener('DOMContentLoaded', function() {
+	  // Configuración del lightbox
+	  const lightbox = document.getElementById('lightbox');
+	  const lightboxImg = document.querySelector('.lightbox-image');
+	  const lightboxCaption = document.querySelector('.lightbox-caption');
+	  const lightboxCounter = document.querySelector('.lightbox-counter');
+	  const closeBtn = document.querySelector('.close-btn');
+	  const prevBtn = document.querySelector('.prev-btn');
+	  const nextBtn = document.querySelector('.next-btn');
+	  
+	  // Variables para la navegación
+	  let currentGallery = [];
+	  let currentIndex = 0;
+	  
+	  // Función para abrir el lightbox
+	  function openLightbox(img) {
+		const gallery = img.closest('.gallery');
+		currentGallery = Array.from(gallery.querySelectorAll('.gallery-item img'));
+		currentIndex = currentGallery.indexOf(img);
+		
+		updateLightboxContent();
+		lightbox.classList.add('active');
+		document.body.style.overflow = 'hidden';
+	  }
+	  
+	  // Actualizar el contenido del lightbox
+	  function updateLightboxContent() {
+		const img = currentGallery[currentIndex];
+		const fullSrc = img.getAttribute('data-full') || img.src;
+		
+		lightboxImg.src = fullSrc;
+		lightboxImg.alt = img.alt;
+		
+		const figcaption = img.closest('.gallery-item').querySelector('figcaption');
+		lightboxCaption.textContent = figcaption ? figcaption.textContent : '';
+		
+		lightboxCounter.textContent = `${currentIndex + 1} / ${currentGallery.length}`;
+	  }
+	  
+	  // Cerrar el lightbox
+	  function closeLightbox() {
+		lightbox.classList.remove('active');
+		document.body.style.overflow = '';
+	  }
+	  
+	  // Imagen anterior
+	  function prevImage() {
+		currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+		updateLightboxContent();
+	  }
+	  
+	  // Imagen siguiente
+	  function nextImage() {
+		currentIndex = (currentIndex + 1) % currentGallery.length;
+		updateLightboxContent();
+	  }
+	  
+	  // Eventos para las imágenes de la galería
+	  document.querySelectorAll('.gallery-item img').forEach(function(img) {
+		img.addEventListener('click', function() {
+		  openLightbox(this);
+		});
+	  });
+	  
+	  // Eventos de navegación
+	  closeBtn.addEventListener('click', closeLightbox);
+	  prevBtn.addEventListener('click', prevImage);
+	  nextBtn.addEventListener('click', nextImage);
+	  
+	  // Navegación con teclado
+	  document.addEventListener('keydown', function(e) {
+		if (!lightbox.classList.contains('active')) return;
+		
+		switch (e.key) {
+		  case 'Escape':
+			closeLightbox();
+			break;
+		  case 'ArrowLeft':
+			prevImage();
+			break;
+		  case 'ArrowRight':
+			nextImage();
+			break;
+		}
+	  });
+	  
+	  // Cerrar al hacer clic fuera de la imagen
+	  lightbox.addEventListener('click', function(e) {
+		if (e.target === lightbox) {
+		  closeLightbox();
+		}
+	  });
+	  
+	  // Funcionalidad de tabs
+	  const mediaTabs = document.querySelectorAll('.media-tab');
+	  const mainSections = document.querySelectorAll('.main-section');
+	  
+	  mediaTabs.forEach(function(tab) {
+		tab.addEventListener('click', function() {
+		  mediaTabs.forEach(function(t) {
+			t.classList.remove('active');
+		  });
+		  
+		  this.classList.add('active');
+		  
+		  mainSections.forEach(function(section) {
+			section.classList.remove('active');
+		  });
+		  
+		  const targetId = this.getAttribute('data-target');
+		  const targetSection = document.getElementById(targetId);
+		  if (targetSection) {
+			targetSection.classList.add('active');
+		  }
+		});
+	  });
+	});
+	</script>
+	</body>
+	</html>

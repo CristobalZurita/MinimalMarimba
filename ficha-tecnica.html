@@ -1,0 +1,648 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Ficha Técnica | Minimal Marimba</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Ficha técnica y requerimientos para presentaciones de Minimal Marimba - Proyecto artístico de percusión y electrónica." />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/custom.css" />
+		<link rel="stylesheet" href="css/reset-menu-mobile.css">
+		<style>
+			.spec-table {
+				width: 100%;
+				border-collapse: collapse;
+				margin-bottom: 2em;
+			}
+			.spec-table th, .spec-table td {
+				padding: 0.5em;
+				border-bottom: 1px solid #ddd;
+			}
+			.spec-table th {
+				background-color: #f5f5f5;
+				text-align: left;
+			}
+			.spec-image {
+				border-radius: 5px;
+				overflow: hidden;
+				margin-bottom: 1em;
+			}
+			.spec-image img {
+				width: 100%;
+				display: block;
+			}
+			.tech-icon {
+				width: 60px;
+				height: 60px;
+				background-color: #f5f5f5;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 0 auto 1em auto;
+			}
+			.tech-icon i {
+				font-size: 24px;
+				color: #F28E2A;
+			}
+			
+			/* Nuevos estilos para la restructuración */
+			.section-container {
+				margin-bottom: 6em;
+				padding-top: 2em;
+				border-top: 1px solid #eee;
+			}
+			
+			.section-container:first-child {
+				border-top: none;
+			}
+			
+			.section-title {
+				margin-bottom: 2em;
+				text-align: center;
+			}
+			
+			.section-title h3 {
+				display: inline-block;
+				padding: 0 1em;
+				position: relative;
+			}
+			
+			.section-title h3:before, .section-title h3:after {
+				content: "";
+				position: absolute;
+				top: 50%;
+				width: 2em;
+				height: 1px;
+				background-color: #F28E2A;
+			}
+			
+			.section-title h3:before {
+				right: 100%;
+			}
+			
+			.section-title h3:after {
+				left: 100%;
+			}
+			
+			.back-to-top {
+				position: fixed;
+				bottom: 2em;
+				right: 2em;
+				background-color: #F28E2A;
+				color: white;
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-decoration: none;
+				opacity: 0.7;
+				transition: opacity 0.3s;
+				z-index: 1000;
+			}
+			
+			.back-to-top:hover {
+				opacity: 1;
+			}
+			
+			.back-to-top i {
+				font-size: 1.5em;
+			}
+			
+			/* Mejoras de espaciado */
+			.box {
+				margin-bottom: 3em;
+				padding: 2em;
+			}
+			
+			#main {
+				padding-top: 3em;
+			}
+			
+			.sidebar .box {
+				margin-bottom: 2em;
+			}
+			
+			.info-box {
+				background-color: #f9f9f9;
+				border-left: 4px solid #F28E2A;
+				padding: 1em 1.5em;
+				margin: 2em 0;
+			}
+		</style>
+	</head>
+	<body class="homepage is-preload">
+		<div id="page-wrapper">
+
+
+			<!-- Header -->
+			<header id="header">
+				<div class="logo container">
+					<div>
+						<h1><a href="home.html" id="logo">
+							<img src="MM_LOGOS/LOGOTIPO/PNG/MINIMAL MARIMBA.png" alt="Minimal Marimba" class="logo-image">
+						</a></h1>
+						<p>Especificaciones y requerimientos técnicos</p>
+					</div>
+				</div>
+			</header>
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					<li><a href="home.html">Home</a></li>
+					<li>
+						<a href="proyecto.html">Proyecto</a>
+						<ul>
+							<li><a href="proyecto.html#concepto">Concepto</a></li>
+							<li><a href="proyecto.html#trayectoria">Trayectoria</a></li>
+							<li><a href="proyecto.html#vision">Visión Artística</a></li>
+						</ul>
+					</li>
+					<li><a href="media.html">Media</a></li>
+					<li class="current"><a href="ficha-tecnica.html">Ficha Técnica</a></li>
+				</ul>
+			</nav>
+
+			<!-- Main -->
+			<section id="main">
+				<div class="container">
+					<!-- Introducción -->
+					<div class="row">
+						<div class="col-12">
+							<article class="box post">
+								<header class="major">
+									<h2>Especificaciones Técnicas</h2>
+									<p>Información detallada para producción y montaje de presentaciones</p>
+								</header>
+								
+								<p><strong>Minimal Marimba</strong> combina la percusión clásica con la experimentación electrónica. Esta ficha técnica proporciona toda la información necesaria para productores, técnicos de sonido y organizadores de eventos que deseen programar nuestras presentaciones.</p>
+							</article>
+						</div>
+					</div>
+					
+					<!-- Sección 1: Marimba e Información Rápida -->
+					<div class="section-container" id="marimba">
+						<div class="section-title">
+							<h3>Instrumentación Principal</h3>
+						</div>
+						
+						<div class="row">
+							<div class="col-8 col-12-medium">
+								<div class="row">
+									<div class="col-6 col-12-small">
+										<div class="spec-image">
+											<img src="FOTOS/marimbaFotos/09.png" alt="Marimba Majestic Reflection" style="margin-top: 100px;">
+										</div>
+									</div>
+									<div class="col-6 col-12-small">
+										<h4>Marimba</h4>
+										<table class="spec-table">
+											<tr>
+												<th>Modelo</th>
+												<td>Majestic Reflection</td>
+											</tr>
+											<tr>
+												<th>Dimensiones</th>
+												<td>2,5m x 1,2m x 0,9m (aproximado)</td>
+											</tr>
+											<tr>
+												<th>Peso</th>
+												<td>120kg aproximadamente</td>
+											</tr>
+											<tr>
+												<th>Componentes</th>
+												<td>6 tubos, 4 juegos de teclas, 2 soportes laterales, largueros reforzados</td>
+											</tr>
+											<tr>
+												<th>Transporte</th>
+												<td>Requiere furgón especializado con acceso amplio</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+							
+							<div class="col-4 col-12-medium">
+								<section class="box">
+									<header>
+										<h3>Información Completa</h3>
+									</header>
+									<p>Descarga la ficha técnica completa en formato PDF para tener toda la información necesaria para la producción de tu evento.</p>
+									<footer>
+										<a href="MANUAL.pdf" class="button alt icon solid fa-file-pdf" download>Descargar PDF</a>
+									</footer>
+								</section>
+							</div>
+						</div>
+					</div>
+					<!-- Galería de fotos de marimba -->
+<div class="section-container" id="galeria-marimba">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="box">
+                <div class="row">
+                    <div class="col-3 col-6-medium col-12-small">
+                        <div class="spec-image">
+                            <img src="FOTOS/marimbaFotos/05.jpg" alt="Marimba vista 1">
+                        </div>
+                    </div>
+                    <div class="col-3 col-6-medium col-12-small">
+                        <div class="spec-image">
+                            <img src="FOTOS/marimbaFotos/06.jpg" alt="Marimba vista 2">
+                        </div>
+                    </div>
+                    <div class="col-3 col-6-medium col-12-small">
+                        <div class="spec-image">
+                            <img src="FOTOS/marimbaFotos/07.jpg" alt="Marimba vista 3">
+                        </div>
+                    </div>
+                    <div class="col-3 col-6-medium col-12-small">
+                        <div class="spec-image">
+                            <img src="FOTOS/marimbaFotos/08.jpg" alt="Marimba vista 4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+					<!-- Sección 2: Necesidades de Sala -->
+					<div class="section-container" id="sala">
+						<div class="section-title">
+							<h3>Necesidades de Sala</h3>
+						</div>
+						
+						<div class="row">
+							<div class="col-12 col-12-medium">
+								<div class="box">
+									<div class="row">
+										<div class="col-3 col-6-medium col-12-small">
+											<div class="tech-icon">
+												<i class="icon solid fa-ruler"></i>
+											</div>
+											<h4 style="text-align: center;">Dimensiones</h4>
+											<p style="text-align: center;">4m x 3m (formato completo)<br>Altura: 2,5m desde escenario</p>
+										</div>
+										<div class="col-3 col-6-medium col-12-small">
+											<div class="tech-icon">
+												<i class="icon solid fa-door-open"></i>
+											</div>
+											<h4 style="text-align: center;">Acceso</h4>
+											<p style="text-align: center;">Entrada amplia para equipo<br>Acceso nivelado recomendado</p>
+										</div>
+										<div class="col-3 col-6-medium col-12-small">
+											<div class="tech-icon">
+												<i class="icon solid fa-volume-up"></i>
+											</div>
+											<h4 style="text-align: center;">Sonido</h4>
+											<p style="text-align: center;">Mesa de mezclas (min. 8 canales)<br>Sistema PA de calidad profesional</p>
+										</div>
+										<div class="col-3 col-6-medium col-12-small">
+											<div class="tech-icon">
+												<i class="icon solid fa-bolt"></i>
+											</div>
+											<h4 style="text-align: center;">Electricidad</h4>
+											<p style="text-align: center;">Conexiones a tierra estabilizadas<br>Mínimo 2 circuitos independientes</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Sección 3: Equipo Electrónico -->
+					<div class="section-container" id="electronica">
+						<div class="section-title">
+							<h3>Equipo Electrónico</h3>
+						</div>
+						
+						<div class="row">
+							<div class="col-6 col-12-medium">
+								<div class="row">
+									<div class="col-12">
+										<div class="spec-image">
+											<img src="FOTOS/electronica/05.jpeg" alt="Setup electrónico adicional" style="width: 100%;">
+										</div>
+									</div>
+									<div class="col-12">
+										<div class="spec-image">
+											<img src="FOTOS/electronica/04.jpeg" alt="Setup electrónico" style="width: 100%; margin-bottom: 1em;">
+										</div>
+									</div>
+									<div class="col-12">
+										<div class="spec-image">
+											<img src="FOTOS/electronica/06.jpeg" alt="Setup electrónico adicional" style="width: 100%;">
+										</div>
+										
+									</div>
+									<div class="col-12">
+										<div class="spec-image">
+											<img src="FOTOS/MIDI.png" alt="Setup electrónico adicional" style="width: 100%;">
+										</div>
+										
+									</div>
+								</div>
+							</div>
+							<div class="col-6 col-12-medium">
+								<h4>Componentes del Setup Electrónico</h4>
+								
+								<h5>Cerebro MIDI / Secuenciación:</h5>
+								<ul>
+									<li>MPC LIVE 2 (sampler/looper)</li>
+									<li>Controlador MIDI maestro NOVATION REMOTE ZERO SL</li>
+									<li>Caja MIDI Thru (4 salidas)</li>
+									<li>Computador Toshiba Satellite S75t</li>
+								</ul>
+								
+								<h5>Sintetizadores:</h5>
+								<ul>
+									<li>Access Virus B Desktop</li>
+									<li>Access Virus B Rack</li>
+									<li>Dave Smith Instruments MOPHO</li>
+									<li>Novation NOVA Desktop</li>
+									<li>Waldorf BLOFELD Desktop</li>
+									<li>Mutable Instruments SHRUTHI-1 Desktop</li>
+									<li>Kurzweil K2000vp (teclado)</li>
+								</ul>
+								
+								<h5>Procesamiento de Audio:</h5>
+								<ul>
+									<li>Compresor Alesis 3630</li>
+									<li>Mesa de audio EMP8 Soundcraft</li>
+									<li>Interfaz de audio TASCAM US2×2</li>
+								</ul>
+								
+								<h5>Pedales de Efectos:</h5>
+								<ul>
+									<li>Line6 DL4 (delay)</li>
+									<li>Boss DD7 (delay digital)</li>
+									<li>Boss RC20XL (looper)</li>
+									<li>Zoom MG50S (multiefectos)</li>
+									<li>Mooer Shimverb Pro (reverb)</li>
+									<li>Mooer Echo Pro</li>
+									<li>Metalwork Distorsión</li>
+								</ul>
+								
+								<h5>Accesorios:</h5>
+								<ul>
+									<li>Atril para teclado</li>
+									<li>Atriles para micrófono (x2)</li>
+									<li>Atriles para partituras (x2)</li>
+									<li>Micrófonos Behringer C2 (par estéreo)</li>
+								</ul>
+								
+								<p><strong>Nota:</strong> El equipo electrónico requiere una superficie estable y nivelada de al menos 2m x 1m, preferentemente protegida de la luz solar directa y la humedad.</p>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Sección 4: Rider Técnico -->
+<div class="section-container" id="rider">
+    <div class="section-title">
+        <h3>Rider Técnico</h3>
+    </div>
+    
+    <div class="row">
+        <div class="col-12 col-12-medium">
+            <div class="box">
+                <p>Para formatos específicos, solicita el rider técnico detallado con diagrama de ubicación en escenario, microfonía recomendada y routing de señal. Los documentos incluyen planos de escenario, listados de canales y requerimientos específicos según el formato.</p>
+                <div class="row" style="margin-top: 2em;">
+                    <div class="col-4 col-12-small">
+						<a href="RiderMARIMBA.pdf" class="button icon solid fa-download" style="width: 100%;" download>Rider Marimba Solista</a>
+                    </div>
+					
+                    <div class="col-4 col-12-small">
+                        <a href="RIderELECTRONICA.pdf" class="button icon solid fa-download" style="width: 100%;" download>Rider MENG-Âmok</a>
+                    </div>
+                    <div class="col-4 col-12-small">
+                        <a href="RiderMIXTO.pdf" class="button icon solid fa-download" style="width: 100%;" download>Rider Formato Mixto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+					
+					<!-- Sección 5: Formatos de Presentación -->
+					<div class="section-container" id="formatos">
+						<div class="section-title">
+							<h3>Formatos de Presentación</h3>
+						</div>
+						
+						<div class="row">
+							<div class="col-4 col-12-medium">
+								<div class="box">
+									<div class="tech-icon">
+										<i class="icon solid fa-drum"></i>
+									</div>
+									<h4 style="text-align: center;">Marimba Acústica</h4>
+									<ul>
+										<li><strong>Duración:</strong> 45-60 minutos</li>
+										<li><strong>Espacio mínimo:</strong> 3m x 2m</li>
+										<li><strong>Acústica:</strong> Preferentemente con buena reverberación natural</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-4 col-12-medium">
+								<div class="box">
+									<div class="tech-icon">
+										<i class="icon solid fa-laptop"></i>
+									</div>
+									<h4 style="text-align: center;">MENG-Âmok</h4>
+									<ul>
+										<li><strong>Duración:</strong> 60-90 minutos</li>
+										<li><strong>Tomas eléctricas:</strong> 2 independientes</li>
+										<li><strong>Superficie:</strong> Mesa estable de 2m x 1m</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-4 col-12-medium">
+								<div class="box">
+									<div class="tech-icon">
+										<i class="icon solid fa-music"></i>
+									</div>
+									<h4 style="text-align: center;">Formato Mixto</h4>
+									<ul>
+										<li><strong>Duración:</strong> 60-75 minutos</li>
+										<li><strong>Espacio mínimo:</strong> 4m x 3m</li>
+										<li><strong>Amplificación:</strong> 2 micrófonos para marimba</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						
+						<p>Cada formato puede adaptarse a las necesidades específicas del evento, con posibilidad de ajustar repertorio, duración y requerimientos técnicos según el espacio y contexto.</p>
+					</div>
+					
+					<!-- Sección 6: Requerimientos para Presentaciones -->
+					<div class="section-container" id="requerimientos">
+						<div class="section-title">
+							<h3>Requerimientos para Presentaciones</h3>
+						</div>
+						
+						<div class="row">
+							<div class="col-6 col-12-medium">
+								<h4>Condiciones Generales</h4>
+								<table class="spec-table">
+									<tr>
+										<th>Tiempo de montaje</th>
+										<td>45-60 minutos (dependiendo del formato)</td>
+									</tr>
+									<tr>
+										<th>Tiempo de desmontaje</th>
+										<td>50 minutos</td>
+									</tr>
+									<tr>
+										<th>Temperatura ambiente</th>
+										<td>Control climático recomendado (18°-24°C)</td>
+									</tr>
+									<tr>
+										<th>Iluminación</th>
+										<td>Posibilidad de ajuste según necesidades del programa</td>
+									</tr>
+								</table>
+							</div>
+							<div class="col-6 col-12-medium">
+								<h4>Condiciones Técnicas Específicas</h4>
+								<ul>
+									<li><strong>Electricidad:</strong> Conexiones a tierra y estabilizadas para equipos electrónicos</li>
+									<li><strong>Audio:</strong> Sistema de PA de calidad profesional con técnico de sonido</li>
+									<li><strong>Personal de apoyo:</strong> Asistente para montaje/desmontaje de marimba (recomendado)</li>
+									<li><strong>Personal de gira (opcional):</strong>
+										<ul>
+											<li>Artista principal</li>
+											<li>Técnico de sonido personal (según complejidad)</li>
+											<li>Asistente de instrumentos</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Sección 7: Necesidades Técnicas para Grabación -->
+					<div class="section-container" id="grabacion">
+						<div class="section-title">
+							<h3>Necesidades Técnicas para Grabación</h3>
+						</div>
+						
+						<div class="row">
+							<div class="col-12 col-12-medium">
+								<div class="box">
+									<h4>Para Sesiones de Estudio</h4>
+									<div class="row">
+										<div class="col-6 col-12-small">
+											<ul>
+												<li>Microfonía especializada para marimba (par estéreo, micrófonos de condensador)</li>
+												<li>Espacio con acústica controlada</li>
+												<li>Posibilidad de grabación multicanal para posteriores mezclas</li>
+												<li>Monitoreo de referencia para sincronización con elementos pregrabados</li>
+											</ul>
+										</div>
+										<div class="col-6 col-12-small">
+											<p>Para proyectos de grabación específicos, se recomienda consultar previamente las necesidades particulares según el repertorio y formato a registrar. Disponemos de equipamiento propio pero es preferible conocer las características del estudio con antelación.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<div class="row gtr-200">
+						<div class="col-6 col-12-medium">
+							<!-- About -->
+							<section>
+								<h2 class="major"><span>Sobre Minimal Marimba</span></h2>
+								<p>
+									<strong>Minimal Marimba</strong> es un proyecto artístico que explora la fusión entre la percusión clásica y la experimentación electrónica, creando un lenguaje sonoro único que respeta las raíces de la percusión mientras se adentra en territorios inexplorados.
+								</p>
+							</section>
+						</div>
+						<div class="col-6 col-12-medium">
+							<!-- Contacto -->
+							<section>
+								<h2 class="major"><span>Contacto</span></h2>
+								<div class="contact-info">
+									<div class="contact-details">
+										<p><strong>Email:</strong> cristobal.z@gmail.com</p>
+										<p><strong>Teléfono:</strong> +569 829 575 38</p>
+										<p><strong>Web:</strong> www.minimalmarimba.cl</p>
+									</div>
+									<div class="social-links">
+										<ul class="contact">
+											<li><a class="icon brands fa-youtube" href="https://www.youtube.com/@cristobalzurita555" target="_blank" rel="noopener noreferrer"><span class="label">YouTube</span></a></li>
+											<li><a class="icon brands fa-instagram" href="https://instagram.com/minimal_marimba" target="_blank" rel="noopener noreferrer"><span class="label">Instagram</span></a></li>
+											<li><a class="icon brands fa-bandcamp" href="https://meng-amok.bandcamp.com/track/meng-mok-rosemarys-baby-10-pi-como-definici-n-del-caos" target="_blank" rel="noopener noreferrer"><span class="label">Bandcamp</span></a></li>
+											<li><a class="icon brands fa-soundcloud" href="https://soundcloud.com/meng-mok" target="_blank" rel="noopener noreferrer"><span class="label">SoundCloud</span></a></li>
+										</ul>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+
+					<!-- Copyright -->
+					<div id="copyright">
+						<ul class="menu">
+						<li>&copy; 2025 Minimal Marimba | Creado por Cristóbal Zurita Quintanilla</li>
+							<li>Valparaíso, Chile</li></ul>
+						</ul>
+					</div>
+
+				</div>
+			</footer>
+
+		</div>
+		
+		<!-- Botón de volver arriba -->
+		<a href="#" class="back-to-top">
+			<i class="icon solid fa-chevron-up"></i>
+		</a>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/mobile-nav.js"></script>
+		
+		<!-- Script para el botón de volver arriba -->
+		<script>
+			$(document).ready(function() {
+				// Inicialmente ocultar el botón
+				$(".back-to-top").hide();
+				
+				// Mostrar/ocultar el botón según el scroll
+				$(window).scroll(function() {
+					if ($(this).scrollTop() > 300) {
+						$(".back-to-top").fadeIn();
+					} else {
+						$(".back-to-top").fadeOut();
+					}
+				});
+				
+				// Animación de scroll al hacer clic
+				$(".back-to-top").click(function(e) {
+					e.preventDefault();
+					$("html, body").animate({scrollTop: 0}, 800);
+					return false;
+				});
+			});
+		</script>
+		
+	</body>
+</html>

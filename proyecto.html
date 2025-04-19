@@ -1,0 +1,394 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Proyecto | Minimal Marimba</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Minimal Marimba - Proyecto artístico de percusión contemporánea y experimentación electrónica liderado por Cristóbal Zurita Quintanilla." />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/custom.css" />
+		<link rel="stylesheet" href="css/reset-menu-mobile.css">
+		<style>
+			.bio-section {
+				display: none;
+			}
+			.bio-section.active {
+				display: block;
+				animation: fadeIn 0.5s ease-in-out;
+			}
+			@keyframes fadeIn {
+				from { opacity: 0; }
+				to { opacity: 1; }
+			}
+			.profile-image {
+				float: right;
+				margin: 0 0 1em 1em;
+				max-width: 300px;
+				border-radius: 5px;
+				box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+			}
+			@media screen and (max-width: 736px) {
+				.profile-image {
+					float: none;
+					margin: 0 auto 1.5em auto;
+					display: block;
+				}
+			}
+			
+			/* Estilo para el botón de volver arriba */
+			.back-to-top {
+				position: fixed;
+				bottom: 2em;
+				right: 2em;
+				background-color: #F28E2A;
+				color: white;
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-decoration: none;
+				z-index: 1000;
+				opacity: 0;
+				transition: opacity 0.3s ease;
+			}
+			
+			.back-to-top.visible {
+				opacity: 1;
+			}
+			
+			.back-to-top i {
+				font-size: 1.2em;
+			}
+			
+			/* Estilos para la barra de navegación secundaria */
+			.secondary-nav {
+				background-color: #f8f8f8;
+				border-bottom: 1px solid #e7e7e7;
+				position: sticky;
+				top: 44px; /* Ajustado para quedar debajo del nav principal */
+				z-index: 899; /* Menor que el nav principal que tiene 900 */
+				width: 100%;
+				padding: 0.5em 0;
+				box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+				margin-bottom: 2em;
+			}
+
+			.secondary-menu {
+				display: flex;
+				justify-content: center;
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+
+			.secondary-menu li {
+				margin: 0;
+				padding: 0;
+			}
+
+			.secondary-menu-item {
+				display: block;
+				padding: 12px 20px;
+				color: #333;
+				text-decoration: none;
+				font-weight: 500;
+				transition: all 0.3s ease;
+				border-bottom: 3px solid transparent;
+			}
+
+			.secondary-menu-item:hover,
+			.secondary-menu-item.active {
+				color: #F28E2A;
+				border-bottom: 3px solid #F28E2A;
+			}
+		</style>
+	</head>
+	<body class="homepage is-preload">
+		<div id="page-wrapper">
+
+
+			<!-- Header -->
+			<header id="header">
+				<div class="logo container">
+					<div>
+						<h1><a href="home.html" id="logo">
+							<img src="MM_LOGOS/LOGOTIPO/PNG/MINIMAL MARIMBA.png" alt="Minimal Marimba" class="logo-image">
+						</a></h1>
+						<p>Concepto, trayectoria y visión artística</p>
+					</div>
+				</div>
+			</header>
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					<li><a href="home.html">Home</a></li>
+					<li class="current">
+						<a href="proyecto.html">Proyecto</a>
+						<ul>
+							<li><a href="#concepto">Concepto</a></li>
+							<li><a href="#trayectoria">Trayectoria</a></li>
+							<li><a href="#vision">Visión Artística</a></li>
+						</ul>
+					</li>
+					<li><a href="media.html">Media</a></li>
+					<li><a href="ficha-tecnica.html">Ficha Técnica</a></li>
+				</ul>
+			</nav>
+
+			<!-- Main -->
+			<section id="main">
+				<div class="container">
+					<!-- Barra de navegación secundaria -->
+					<div class="secondary-nav">
+						<div class="container">
+							<ul class="secondary-menu">
+								<li><a href="#concepto" class="secondary-menu-item" data-section="concepto">Concepto</a></li>
+								<li><a href="#trayectoria" class="secondary-menu-item" data-section="trayectoria">Trayectoria</a></li>
+								<li><a href="#vision" class="secondary-menu-item" data-section="vision">Visión Artística</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- Content -->
+					<article class="box post">
+						<header>
+							<h2>Minimal Marimba</h2>
+							<p>Percusión contemporánea & Experimentación electrónica</p>
+						</header>
+						
+						<!-- Concepto -->
+						<div id="concepto" class="bio-section active">
+							<img src="FOTOS/marimbaFotos/10.png" alt="Minimal Marimba - Concepto" class="profile-image">
+							
+							<p>Minimal Marimba es un proyecto artístico que explora las fronteras entre la percusión clásica y el universo de la electrónica contemporánea. Nacido de la visión de Cristóbal Nicolás Zurita Quintanilla (Santiago de Chile, 1984), este proyecto transforma el diálogo entre tradición e innovación en una experiencia sonora única y evocadora.</p>
+							
+							<p>El núcleo de esta propuesta artística se articula en torno a dos ejes fundamentales: la profunda tradición de la percusión clásica, materializada en el cálido timbre de la marimba, y la vanguardia sonora de la electrónica, expresada a través de sintetizadores y procesamiento digital. Lejos de ser una mera superposición, esta dualidad genera un lenguaje sonoro propio donde las texturas acústicas y electrónicas se entrelazan orgánicamente, creando paisajes sonoros inéditos.</p>
+							
+							<p>Como extensión natural de esta exploración, el proyecto paralelo Meng-Âmok profundiza en la vertiente electrónica, transitando desde atmósferas ambientales etéreas hasta construcciones rítmicas más intensas inspiradas en el acid house y el drum and bass. Esta rama mantiene siempre un vínculo con la cualidad percusiva y textural de la marimba, estableciendo un puente entre ambos universos sonoros.</p>
+							
+							<p>El nombre "Minimal Marimba" evoca tanto la estética minimalista presente en parte de su repertorio como la búsqueda de la esencia sonora, destilando complejidades en elementos expresivos esenciales. El resultado son composiciones e interpretaciones que invitan a una escucha contemplativa y a una inmersión sensorial profunda, donde cada resonancia adquiere un significado propio dentro del conjunto.</p>
+						</div>
+						
+						<!-- Trayectoria -->
+						<div id="trayectoria" class="bio-section">
+							<h3>Evolución del Proyecto</h3>
+							<img src="FOTOS/marimbaFotos/02.jpg" alt="Minimal Marimba - Concepto" class="profile-image">
+							<h4>Formación y Fundamentos (1990-2003)</h4>
+							<p>Las raíces de Minimal Marimba se encuentran en la formación musical de Cristóbal Zurita, iniciada en el Colegio Oratorio Don Bosco, donde desarrolló su temprana pasión por la percusión. Esta vocación se consolidó durante sus estudios en el Instituto Secundario de la Universidad de Chile (1999-2001) y bajo la tutela de la profesora Elena Corvalán en la cátedra de percusión. Durante este período, enriqueció su técnica a través de diversos seminarios internacionales, destacando su inmersión en la percusión afrocubana en La Habana (2001) y su formación específica en marimba en Viña del Mar (2004), donde trabajó con maestros de la talla de Rebecca Kite y Fernando Hashimoto. Esta etapa fundacional estableció los sólidos cimientos técnicos sobre los que posteriormente se desarrollaría el proyecto.</p>
+							
+							<h4>Diversificación y Experimentación (2003-2013)</h4>
+							<p>A partir de 2003, la trayectoria artística de Cristóbal se expandió hacia nuevos territorios sonoros, creando un diálogo entre su formación clásica y su experiencia como baterista en diversos proyectos de música amplificada, con particular relevancia su participación en la banda de death metal Anima Inmortalis (2003-2007). Paralelamente, inició una profunda exploración del universo de la música electrónica, los sintetizadores y la tecnología MIDI, desarrollando un conocimiento técnico y estético que sentaría las bases para sus futuras creaciones. Esta etapa de experimentación le permitió integrar lenguajes musicales aparentemente distantes, descubriendo puntos de convergencia e interacción que enriquecerían su propuesta artística.</p>
+							
+							<h4>Desarrollo de Meng-Âmok (2013-2019)</h4>
+							<p>El año 2013 marca el nacimiento oficial de Meng-Âmok como vertiente dedicada a la exploración electrónica dentro del proyecto. Durante este período, Cristóbal desarrolló un lenguaje sonoro distintivo que transita fluidamente desde paisajes ambientales contemplativos hasta estructuras rítmicas complejas inspiradas en el techno, acid house y drum and bass. Esta fase se caracterizó por una intensa experimentación con diversos sintetizadores y técnicas de producción, creando un corpus de trabajo que establecería las bases para la posterior integración con la expresividad acústica de la marimba. La evolución de Meng-Âmok representa un laboratorio sonoro donde las texturas electrónicas se moldean manteniendo siempre una conexión con la sensibilidad percusiva.</p>
+							
+							<h4>Minimal Marimba: Síntesis e Integración (2020-Presente)</h4>
+							<p>Desde 2020, el proyecto cristaliza bajo el nombre Minimal Marimba, inaugurando una etapa de plena integración entre los universos acústico y electrónico. Esta fase se materializa en una serie de presentaciones e intervenciones que fusionan orgánicamente la calidez tímbrica de la marimba con la riqueza textural de la electrónica. El repertorio se expande para incluir tanto interpretaciones de obras clásicas de compositores como Paul Smadbeck, Keiko Abe y J.S. Bach, como adaptaciones orquestales mediante sintetizadores de piezas emblemáticas como el Concierto de Brandenburgo N°3 o la Danza del Sable. Esta síntesis representa la culminación de un largo proceso de exploración, donde las diferentes influencias y experiencias convergen en un lenguaje artístico coherente y personal.</p>
+							
+							<h4>Proyectos Destacados</h4>
+							<ul>
+								<li><strong>Recitales de marimba solista</strong>: Interpretaciones del repertorio clásico y contemporáneo que revelan la profundidad expresiva del instrumento en su forma acústica pura.</li>
+								<li><strong>Meng-Âmok</strong>: Exploración electrónica que navega entre paisajes ambientales, texturas techno, acid house y estructuras rítmicas del drum and bass.</li>
+								<li><strong>Orquestaciones electrónicas</strong>: Reinterpretación de obras orquestales clásicas mediante sintetizadores, creando nuevas perspectivas tímbricas sobre composiciones atemporales.</li>
+								<li><strong>Intervenciones en espacios públicos</strong>: Presentaciones en entornos urbanos que democratizan el acceso a la música de marimba y difunden nuevas formas de escucha.</li>
+								<li><strong>Performances híbridas</strong>: Actuaciones que integran en tiempo real la marimba acústica con procesamiento electrónico, generando diálogos sonoros únicos entre ambos mundos.</li>
+							</ul>
+						</div>
+						
+						<!-- Visión Artística -->
+						<div id="vision" class="bio-section">
+							<h3>El Puente Entre Mundos Sonoros</h3>
+							<img src="FOTOS/electronica/07.jpg" alt="Minimal Marimba - Concepto" class="profile-image">
+							<p>Minimal Marimba se posiciona como un nexo entre tradiciones musicales aparentemente distantes, creando un diálogo fluido entre la calidez expresiva de la marimba y las infinitas posibilidades del lienzo electrónico. La propuesta no aspira simplemente a innovar por innovar, sino a servir como puente entre el público y experiencias sonoras poco convencionales, acercando a las audiencias a universos musicales que normalmente permanecerían en ámbitos especializados.</p>
+							
+							<p>El proyecto reinterpreta el repertorio clásico desde nuevas perspectivas tímbricas, mientras explora territorios sonoros contemporáneos a través de composiciones electrónicas y adaptaciones orquestales con sintetizadores. Esta aproximación preserva la integridad de la tradición musical mientras la proyecta hacia nuevos horizontes expresivos. Parafraseando la profunda admiración por J.S. Bach, figura fundamental en el repertorio del proyecto, Minimal Marimba busca un equilibrio entre la precisión estructural y la libertad interpretativa que caracteriza la obra del maestro alemán.</p>
+							
+							<p>La decisión de realizar presentaciones en espacios abiertos y no convencionales responde a esta filosofía de democratización de la experiencia musical. Cada intervención se convierte en una invitación al descubrimiento, donde los oyentes pueden transitar desde lo familiar hacia lo inexplorado, ampliando su percepción sonora y participando activamente en una experiencia estética transformadora. En este sentido, Minimal Marimba no concibe la tradición como un ancla sino como un punto de partida para un viaje sonoro que conecta lo ancestral con lo contemporáneo, tejiendo nuevas narrativas entre épocas, estilos y tecnologías.</p>
+							
+							<div class="row">
+								<div class="col-6 col-12-medium">
+									<img src="FOTOS/36.jpg" alt="Performance con marimba" style="width:100%; border-radius:5px;">
+								</div>
+								<div class="col-6 col-12-medium">
+									<img src="FOTOS/42.jpg" alt="Setup electrónico" style="width:100%; border-radius:5px;">
+								</div>
+							</div>
+						</div>
+					</article>
+
+				</div>
+			</section>
+
+			<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<div class="row gtr-200">
+						<div class="col-6 col-12-medium">
+							<!-- About -->
+							<section>
+								<h2 class="major"><span>Sobre Minimal Marimba</span></h2>
+								<p>
+									<strong>Minimal Marimba</strong> es un proyecto artístico que fusiona la tradición de la percusión clásica con la vanguardia de la experimentación electrónica. A través de un diálogo entre la calidez tímbrica de la marimba y la riqueza textural de los sintetizadores, crea experiencias sonoras que invitan a la contemplación y al descubrimiento de nuevos paisajes auditivos.
+								</p>
+							</section>
+						</div>
+						<div class="col-6 col-12-medium">
+							<!-- Contacto -->
+							<section>
+								<h2 class="major"><span>Contacto</span></h2>
+								<div class="contact-info">
+									<div class="contact-details">
+										<p><strong>Email:</strong> minimalmarimba@gmail.com</p>
+										<p><strong>Teléfono:</strong> +569 829 575 38</p>
+										<p><strong>Web:</strong> www.minimalmarimba.cl</p>
+									</div>
+									<div class="social-links">
+										<ul class="contact">
+											<li><a class="icon brands fa-youtube" href="https://www.youtube.com/@cristobalzurita555" target="_blank" rel="noopener noreferrer"><span class="label">YouTube</span></a></li>
+											<li><a class="icon brands fa-instagram" href="https://instagram.com/minimal_marimba" target="_blank" rel="noopener noreferrer"><span class="label">Instagram</span></a></li>
+											<li><a class="icon brands fa-bandcamp" href="https://Meng-amok.bandcamp.com/track/Meng-mok-rosemarys-baby-10-pi-como-definici-n-del-caos" target="_blank" rel="noopener noreferrer"><span class="label">Bandcamp</span></a></li>
+											<li><a class="icon brands fa-soundcloud" href="https://soundcloud.com/Meng-mok" target="_blank" rel="noopener noreferrer"><span class="label">SoundCloud</span></a></li>
+										</ul>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+
+					<!-- Copyright -->
+					<div id="copyright">
+						<ul class="menu">
+							<li>&copy; 2025 Minimal Marimba | Creado por Cristóbal Zurita Quintanilla</li>
+							<li>Valparaíso, Chile</li>
+						</ul>
+					</div>
+
+				</div>
+			</footer>
+
+			<!-- Botón de volver arriba -->
+			<a href="#" class="back-to-top">
+				<i class="icon solid fa-chevron-up"></i>
+			</a>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/mobile-nav.js"></script>
+		
+		<!-- Script para manejar la navegación y las secciones -->
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				// Obtener referencias a elementos
+				const menuItems = document.querySelectorAll('.secondary-menu-item');
+				const sections = document.querySelectorAll('.bio-section');
+				const backToTopBtn = document.querySelector('.back-to-top');
+				
+				// Función para obtener la sección actual de la URL
+				function getCurrentSection() {
+					const hash = window.location.hash.substring(1);
+					return hash || 'concepto'; // Por defecto, 'concepto' si no hay hash
+				}
+				
+				// Función para actualizar el menú activo y mostrar la sección correspondiente
+				function updateActiveSection() {
+					const currentSection = getCurrentSection();
+					
+					// Actualizar menú activo
+					menuItems.forEach(item => {
+						const itemSection = item.getAttribute('data-section');
+						if (itemSection === currentSection) {
+							item.classList.add('active');
+						} else {
+							item.classList.remove('active');
+						}
+					});
+					
+					// Mostrar la sección correspondiente
+					sections.forEach(section => {
+						if (section.id === currentSection) {
+							section.classList.add('active');
+						} else {
+							section.classList.remove('active');
+						}
+					});
+				}
+				
+				// Función para desplazarse a la parte superior del artículo
+				function scrollToArticleTop() {
+					const articleTop = document.querySelector('.box.post').offsetTop;
+					const navHeight = document.querySelector('#nav').offsetHeight;
+					const secondaryNavHeight = document.querySelector('.secondary-nav').offsetHeight;
+					
+					window.scrollTo({
+						top: articleTop - navHeight - secondaryNavHeight - 20,
+						behavior: 'smooth'
+					});
+				}
+				
+				// Añadir listeners a los elementos del menú
+				menuItems.forEach(item => {
+					item.addEventListener('click', function(e) {
+						e.preventDefault();
+						
+						const section = this.getAttribute('data-section');
+						
+						// Remover clase activa de todos los elementos
+						menuItems.forEach(mi => mi.classList.remove('active'));
+						sections.forEach(s => s.classList.remove('active'));
+						
+						// Activar el elemento clickeado y su sección correspondiente
+						this.classList.add('active');
+						document.getElementById(section).classList.add('active');
+						
+						// Actualizar URL sin causar scroll automático
+						history.pushState(null, null, '#' + section);
+						
+						// Desplazarse suavemente a la parte superior del artículo
+						scrollToArticleTop();
+					});
+				});
+				
+				// Botón de volver arriba
+				window.addEventListener('scroll', function() {
+					if (window.pageYOffset > 300) {
+						backToTopBtn.classList.add('visible');
+					} else {
+						backToTopBtn.classList.remove('visible');
+					}
+				});
+				
+				backToTopBtn.addEventListener('click', function(e) {
+					e.preventDefault();
+					window.scrollTo({
+						top: 0,
+						behavior: 'smooth'
+					});
+				});
+				
+				// Actualizar sección activa cuando cambia el hash en la URL
+				window.addEventListener('hashchange', updateActiveSection);
+				
+				// Inicializar: marcar la sección activa al cargar
+				updateActiveSection();
+				
+				// Si hay un hash en la URL al cargar, desplazarse a la sección correspondiente
+				if (window.location.hash) {
+					setTimeout(() => {
+						scrollToArticleTop();
+					}, 100);
+				}
+			});
+		</script>
+	</body>
+</html>
