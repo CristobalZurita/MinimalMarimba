@@ -705,3 +705,115 @@ html {
         margin: 0 0.2em;
     }
 }
+
+/* ===== CORRECCIÓN PARA MENÚ MÓVIL ===== */
+
+/* Asegurar que el menú es visible en móvil y tablet */
+#titleBar {
+    display: none !important; /* Ocultar la barra de título móvil que reemplaza al menú */
+}
+
+#navPanel {
+    display: none !important; /* Ocultar el panel de navegación móvil alternativo */
+}
+
+body {
+    padding-top: 0 !important; /* Eliminar el padding que se agrega para la barra de título */
+}
+
+/* Forzar que el menú principal sea visible en todas las resoluciones */
+#nav {
+    display: block !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    z-index: 100 !important;
+    background: var(--color-light) !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+/* Asegurar que el menú principal y sus elementos sean siempre visibles */
+#nav > ul {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    width: 100% !important;
+    padding: 0.5rem !important;
+    margin: 0 !important;
+}
+
+#nav > ul > li {
+    display: inline-block !important;
+    padding: 0 !important;
+    margin: 0.3rem !important;
+}
+
+#nav > ul > li > a {
+    display: block !important;
+    padding: 0.5rem 0.8rem !important;
+    font-size: 0.9rem !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+}
+
+/* Ajustes específicos para dispositivos móviles muy pequeños */
+@media screen and (max-width: 480px) {
+    #nav > ul {
+        padding: 0.3rem !important;
+    }
+    
+    #nav > ul > li {
+        margin: 0.2rem !important;
+    }
+    
+    #nav > ul > li > a {
+        padding: 0.4rem 0.6rem !important;
+        font-size: 0.85rem !important;
+    }
+}
+
+/* Asegurar que el header y el logo se vean bien en móvil */
+#header {
+    padding: 1.5rem 0 !important;
+}
+
+/* Mantener los estilos para elementos activos */
+#nav li.current a {
+    background: var(--color-primary) !important;
+    color: white !important;
+    border-radius: 3px !important;
+}
+
+/* Si hay problemas con el menú secundario, asegurar que también sea visible */
+.secondary-nav {
+    display: block !important;
+    width: 100% !important;
+}
+
+.secondary-menu {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Eliminar transiciones que puedan causar problemas */
+#nav, #nav ul, #nav li, #nav a,
+.secondary-nav, .secondary-menu, .secondary-menu-item {
+    transition: none !important;
+}
+
+/* Desactivar cualquier JavaScript que pueda estar manipulando el menú */
+body.navPanel-visible #titleBar,
+body.navPanel-visible #navPanel {
+    display: none !important;
+}
+
+body.navPanel-visible {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding-top: 0 !important;
+}
