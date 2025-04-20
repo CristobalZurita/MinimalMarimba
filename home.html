@@ -237,6 +237,7 @@
 			});
 		</script>
 		<!-- Estilo para el botón de WhatsApp que solo aparece al llegar a Contacto -->
+<!-- Estilo para el botón de WhatsApp que solo aparece al llegar a Contacto -->
 <style>
 	.whatsapp-contact {
 	  position: fixed;
@@ -249,14 +250,37 @@
 	  text-decoration: none;
 	  display: none; /* Inicialmente oculto */
 	}
-  
+	
 	.whatsapp-contact img {
 	  width: 60px;
 	  height: 60px;
 	}
-  
+	
 	.whatsapp-contact:hover {
 	  transform: scale(1.1);
+	}
+	
+	/* Ajustes responsivos para móviles */
+	@media screen and (max-width: 767px) {
+	  .whatsapp-contact {
+		bottom: 20px;
+		left: 20px;
+		width: 50px;
+		height: 50px;
+	  }
+	  
+	  .whatsapp-contact img {
+		width: 50px;
+		height: 50px;
+	  }
+	  
+	  /* Ajustar también el botón de volver arriba para alinearlo */
+	  .back-to-top {
+		bottom: 20px;
+		right: 20px;
+		width: 50px;
+		height: 50px;
+	  }
 	}
   </style>
   
