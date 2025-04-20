@@ -394,33 +394,57 @@
 				}
 			});
 		</script>
+
 		<!-- Estilo para el botón de WhatsApp que solo aparece al llegar a Contacto -->
 <style>
 	.whatsapp-contact {
 	  position: fixed;
 	  width: 60px;
 	  height: 60px;
-	  bottom: 50px;
-	  left: 50px;
+	  bottom: 100px;
+	  left: 0px;
 	  z-index: 999;
 	  transition: all 0.3s;
 	  text-decoration: none;
 	  display: none; /* Inicialmente oculto */
 	}
-  
+	
 	.whatsapp-contact img {
 	  width: 60px;
 	  height: 60px;
 	}
-  
+	
 	.whatsapp-contact:hover {
 	  transform: scale(1.1);
+	}
+	
+	/* Ajustes responsivos para móviles */
+	@media screen and (max-width: 767px) {
+	  .whatsapp-contact {
+		bottom: 50px;
+		left: -10px;
+		width: 60px;
+		height: 60px;
+	  }
+	  
+	  .whatsapp-contact img {
+		width: 60px;
+		height: 60px;
+	  }
+	  
+	  /* Ajustar también el botón de volver arriba para alinearlo */
+	  .back-to-top {
+		bottom: 20px;
+		right: 20px;
+		width: 50px;
+		height: 50px;
+	  }
 	}
   </style>
   
   <!-- Botón de WhatsApp con imagen -->
   <a href="https://wa.me/56982957538?text=Hola%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20Minimal%20Marimba" class="whatsapp-contact" target="_blank">
-	<img src="MM_LOGOS/WhatsApp.svg"" alt="WhatsApp">
+	<img src="MM_LOGOS/WhatsApp.svg" alt="WhatsApp">
   </a>
   
   <!-- Script mejorado para mostrar el botón solo cuando se llegue a la sección de contacto -->
