@@ -236,40 +236,36 @@
 				});
 			});
 		</script>
-		<!-- Estilo para el botón de WhatsApp -->
+		<!-- Estilo para el botón de WhatsApp que solo aparece al llegar a Contacto -->
 <style>
 	.whatsapp-contact {
 	  position: fixed;
-	  width: 40px;
-	  height: 40px;
-	  bottom: 2em;
-	  left: 2em; /* Posicionado a la izquierda */
-	  background-color: #25d366;
-	  color: #FFF;
-	  border-radius: 50%;
-	  text-align: center;
-	  box-shadow: 2px 2px 3px #999;
+	  width: 60px;
+	  height: 60px;
+	  bottom: 100px;
+	  left: 0px;
 	  z-index: 999;
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
-	  text-decoration: none;
 	  transition: all 0.3s;
+	  text-decoration: none;
 	  display: none; /* Inicialmente oculto */
 	}
   
+	.whatsapp-contact img {
+	  width: 60px;
+	  height: 60px;
+	}
+  
 	.whatsapp-contact:hover {
-	  background-color: #128C7E;
 	  transform: scale(1.1);
 	}
   </style>
   
-  <!-- Botón de WhatsApp -->
+  <!-- Botón de WhatsApp con imagen -->
   <a href="https://wa.me/56982957538?text=Hola%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20Minimal%20Marimba" class="whatsapp-contact" target="_blank">
-	<i class="icon brands fa-whatsapp" style="font-size: 1.2em;"></i>
+	<img src="MM_LOGOS/whatsapp.png" alt="WhatsApp">
   </a>
   
-  <!-- Script para controlar la visibilidad del botón de WhatsApp -->
+  <!-- Script mejorado para mostrar el botón solo cuando se llegue a la sección de contacto -->
   <script>
 	$(document).ready(function() {
 	  // Inicialmente ocultar el botón
@@ -277,12 +273,18 @@
 	  
 	  // Función para verificar si la sección de contacto es visible
 	  function isContactVisible() {
+		// Buscar la sección de contacto por su título
 		var contactSection = $('h2.major:contains("Contacto")').closest('section');
+		
 		if (contactSection.length) {
 		  var contactTop = contactSection.offset().top;
-		  var windowBottom = $(window).scrollTop() + $(window).height();
-		  return windowBottom > contactTop;
+		  var windowScroll = $(window).scrollTop();
+		  var windowHeight = $(window).height();
+		  
+		  // Mostrar cuando el usuario se acerca a la sección de contacto
+		  return (windowScroll + windowHeight > contactTop);
 		}
+		
 		return false;
 	  }
 	  
@@ -295,7 +297,7 @@
 		}
 	  });
 	  
-	  // Verificar también al cargar la página
+	  // También verificar al cargar la página
 	  if (isContactVisible()) {
 		$(".whatsapp-contact").show();
 	  }

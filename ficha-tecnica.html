@@ -744,5 +744,72 @@
 	  });
 	});
   </script>
+<!-- Estilo para el botón de WhatsApp que solo aparece al llegar a Contacto -->
+<style>
+	.whatsapp-contact {
+	  position: fixed;
+	  width: 60px;
+	  height: 60px;
+	  bottom: 50px;
+	  left: 50px;
+	  z-index: 999;
+	  transition: all 0.3s;
+	  text-decoration: none;
+	  display: none; /* Inicialmente oculto */
+	}
+  
+	.whatsapp-contact img {
+	  width: 60px;
+	  height: 60px;
+	}
+  
+	.whatsapp-contact:hover {
+	  transform: scale(1.1);
+	}
+  </style>
+  
+  <!-- Botón de WhatsApp con imagen -->
+  <a href="https://wa.me/56982957538?text=Hola%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20Minimal%20Marimba" class="whatsapp-contact" target="_blank">
+	<img src="MM_LOGOS/whatsapp.png" alt="WhatsApp">
+  </a>
+  
+  <!-- Script mejorado para mostrar el botón solo cuando se llegue a la sección de contacto -->
+  <script>
+	$(document).ready(function() {
+	  // Inicialmente ocultar el botón
+	  $(".whatsapp-contact").hide();
+	  
+	  // Función para verificar si la sección de contacto es visible
+	  function isContactVisible() {
+		// Buscar la sección de contacto por su título
+		var contactSection = $('h2.major:contains("Contacto")').closest('section');
+		
+		if (contactSection.length) {
+		  var contactTop = contactSection.offset().top;
+		  var windowScroll = $(window).scrollTop();
+		  var windowHeight = $(window).height();
+		  
+		  // Mostrar cuando el usuario se acerca a la sección de contacto
+		  return (windowScroll + windowHeight > contactTop);
+		}
+		
+		return false;
+	  }
+	  
+	  // Verificar visibilidad al hacer scroll
+	  $(window).scroll(function() {
+		if (isContactVisible()) {
+		  $(".whatsapp-contact").fadeIn();
+		} else {
+		  $(".whatsapp-contact").fadeOut();
+		}
+	  });
+	  
+	  // También verificar al cargar la página
+	  if (isContactVisible()) {
+		$(".whatsapp-contact").show();
+	  }
+	});
+  </script>
 	</body>
 </html>
