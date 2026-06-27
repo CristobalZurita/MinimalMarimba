@@ -1,71 +1,113 @@
+<!-- index.html -->
 <!DOCTYPE HTML>
 <html lang="es">
 <head>
-  <title>Minimal Marimba | Archivo Documental Vivo</title>
-  <meta name="description" content="Archivo documental vivo de Minimal Marimba y la trayectoria artística de Cristóbal Zurita Quintanilla." />
-  <meta property="og:title" content="Minimal Marimba | Archivo Documental Vivo" />
-  <meta property="og:description" content="Percusión contemporánea, experimentación electrónica y archivo histórico." />
-  <meta property="og:image" content="https://cristobalzurita.github.io/MinimalMarimba/Cover_photo_minimal_001.png" />
-  <meta property="og:url" content="https://cristobalzurita.github.io/MinimalMarimba/" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <meta name="author" content="Cristóbal Zurita Quintanilla" />
-  <meta name="theme-color" content="#F28E2A" />
-  <link rel="stylesheet" href="assets/css/archive.css" />
-  <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-  <style>
-    .mm-splash {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)), url('Cover_photo_minimal_001.png') center/cover no-repeat;
-      color: var(--mm-white);
-      text-align: center;
-      padding: 2rem;
-    }
-    .mm-splash__logo {
-      max-width: 320px;
-      width: 60vw;
-      margin-bottom: 2rem;
-      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
-    }
-    .mm-splash__title {
-      font-size: clamp(1.5rem, 5vw, 2.5rem);
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-    .mm-splash__subtitle {
-      font-size: clamp(1rem, 2.5vw, 1.25rem);
-      color: var(--mm-gray-300);
-      margin-bottom: 2.5rem;
-      max-width: 600px;
-    }
-    .mm-splash__enter {
-      font-size: 1.1rem;
-      padding: 1rem 2.5rem;
-    }
-    .mm-splash__hint {
-      margin-top: 2rem;
-      font-size: 0.8rem;
-      color: var(--mm-gray-500);
-    }
-  </style>
+<meta charset="utf-8" />
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1, user-scalable=no"
+/>
+<title>
+ Minimal Marimba | Percusión contemporánea &amp; Experimentación electrónica
+</title>
+<meta
+name="description"
+content="Minimal Marimba - Proyecto artístico de percusión contemporánea y experimentación electrónica."
+/>
+<!-- Open Graph Meta Tags para Facebook y otras redes sociales -->
+<meta property="og:title" content="Minimal Marimba | Percusión contemporánea &amp; Experimentación electrónica" />
+<meta property="og:description" content="Minimal Marimba - Proyecto artístico de percusión contemporánea y experimentación electrónica." />
+<meta property="og:image" content="https://cristobalzurita.github.io/MinimalMarimba/Cover_photo_minimal_001.png" />
+<meta property="og:url" content="https://cristobalzurita.github.io/MinimalMarimba/" />
+<meta property="og:type" content="website" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<!-- Twitter Card Tags -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Minimal Marimba | Percusión contemporánea &amp; Experimentación electrónica" />
+<meta name="twitter:description" content="Minimal Marimba - Proyecto artístico de percusión contemporánea y experimentación electrónica." />
+<meta name="twitter:image" content="https://cristobalzurita.github.io/MinimalMarimba/Cover_photo_minimal_001.png" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<style>
+/* Cuerpo y splash fullscreen */
+body {
+margin: 0;
+padding: 0;
+background-color: #000;
+height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+ }
+.splash-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+width: 100%;
+ }
+.logo-container {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.logo-container img {
+width: 50%;
+height: auto;
+display: block;}
+.enter-button {
+background-color: rgba(255, 255, 255, 0.9);
+color: #F28E2A;
+font-weight: bold;
+text-transform: uppercase;
+padding: 10px 30px;
+border-radius: 4px;
+text-decoration: none;
+font-size: 1.5em;
+letter-spacing: 1px;
+transition: all 0.3s ease;
+animation: fadeIn 3s;
+display: inline-block;
+margin-top: 65px;
+ }
+.enter-button:hover {
+background-color: #fff;
+transform: translateY(-2px);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+ }
+@keyframes fadeIn {
+ from { opacity: 0; }
+ to { opacity: 1; }
+ }
+</style>
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8N66GGXHZP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8N66GGXHZP');
+</script>
+
+
+
 </head>
 <body>
-  <main class="mm-splash" role="main">
-    <img src="MM_LOGOS/LOGOTIPO/PNG/Logo_white_yellowe.png" alt="Minimal Marimba" class="mm-splash__logo" />
-    <h1 class="mm-splash__title">Archivo Documental Vivo</h1>
-    <p class="mm-splash__subtitle">
-      Percusión contemporánea y experimentación electrónica.<br />
-      La trayectoria de Cristóbal Zurita Quintanilla.
-    </p>
-    <a href="home.html" class="mm-btn mm-btn--primary mm-splash__enter">Entrar al archivo</a>
-    <p class="mm-splash__hint">Valparaíso, Chile · 2025</p>
-  </main>
+<div class="splash-container">
+<div class="logo-container">
+<img
+src="MM_LOGOS/LOGOTIPO/PNG/Logo_white_yellowe.png"
+alt="Minimal Marimba Logo"
+/>
+</div>
+<a href="home.html" class="enter-button">Entrar</a>
+</div>
 </body>
 </html>
